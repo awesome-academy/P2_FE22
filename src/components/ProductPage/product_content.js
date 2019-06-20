@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import ProductCard from './product_card';
 import {connect} from 'react-redux';
+import axios from 'axios';
+import getProductAPI from './../../utils/apiCaller';
 class ProductContent extends Component{
-    componentWillMount(){
-        
+    state = {
+        arr: []
+    }
+    componentDidMount(){
+       getProductAPI('product','GET', null).then(res => {
+           this.setState({
+               arr: res.data
+           })
+       })
     }
     render(){
-        
-        const {arr} = this.props;
+        const {arr} = this.state;
         return(
             <div className="product-grid__content" id="product-grid__content">
                 {arr.map((item, index) => <ProductCard data={item} key={index}/>)}
