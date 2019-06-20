@@ -1,6 +1,13 @@
 import * as types from './../constants/indexConstant';
-export const getProduct = () => {
+export const showProduct = (num) => {
     return {
-        type: types.GET_PRODUCT
+        type: types.SHOW_PRODUCT,
+        num: num
+    }
+}
+export const orderProduct = (value) => {
+    return {
+        type: types.ORDER_PRODUCT,
+        value: value
     }
 }

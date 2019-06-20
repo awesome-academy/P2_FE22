@@ -1,1 +1,2 @@
-export const GET_PRODUCT = 'GET_PRODUCT';
+export const SHOW_PRODUCT = 'SHOW_PRODUCT';
+export const ORDER_PRODUCT = 'ORDER_PRODUCT';

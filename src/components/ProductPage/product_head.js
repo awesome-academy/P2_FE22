@@ -1,25 +1,14 @@
 import React, {Component} from 'react';
 import ProductOption from './product_option';
-export default class ProductHead extends Component{
+import { order, show } from '../variable/option';
+import {connect} from 'react-redux';
+import * as action from '../../actions/indexAction';
+class ProductHead extends Component{
     render(){
-        const order = {
-            title: 'Sắp xếp theo:',
-            item: [
-                "Tên sản phẩm",
-                "Giá",
-                "Đánh giá",
-                "Tình trạng",
-                "Thời gian"
-            ]
-        }
-        const show = {
-            title: 'Show:',
-            item: [6,12,18]
-        }
         return(
             <div className="product-grid__head">
-                <ProductOption option={order} />
-                <ProductOption option={show} />
+                <ProductOption option={order} event={this.props.orderProduct}/>
+                <ProductOption option={show} event={this.props.showProduct}/>
                 <div className="product-grid__list-type">
                     <i className="fa fa-bars product-grid__list-type--item"></i>
                     <i className="fa fa-th product-grid__list-type--item"></i>
@@ -28,3 +17,14 @@ export default class ProductHead extends Component{
         );
     }
 }
+const mapDispatchtoProps = (dispatch, props) => {
+    return {
+        showProduct: (num) => {
+            dispatch(action.showProduct(num))
+        },
+        orderProduct: (value) => {
+            dispatch(action.orderProduct(value))
+        }
+    }
+}
+export default connect(null, mapDispatchtoProps)(ProductHead)
