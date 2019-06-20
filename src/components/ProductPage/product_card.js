@@ -6,10 +6,10 @@ class ProductCard extends Component {
     render(){
 		const {data} = this.props;
 		let stars = [], emptyStar = [];
-		for(let i = 1; i<data.stars; i++){
+		for(let i = 0; i<data.stars; i++){
 			stars.push(<i className="fa fa-star card__evaluate-star" key={i}></i>)
 		}
-		for(let i = 0; i< (5 - data.stars + 1); i++){
+		for(let i = 0; i< (5 - data.stars ); i++){
 			emptyStar.push(<i className="fa fa-star-o card__evaluate-star" key={i}></i>)
 		}
         return(

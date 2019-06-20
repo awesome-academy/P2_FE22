@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ProductCard from './product_card';
 import {connect} from 'react-redux';
-import axios from 'axios';
 import getProductAPI from './../../utils/apiCaller';
 class ProductContent extends Component{
     state = {

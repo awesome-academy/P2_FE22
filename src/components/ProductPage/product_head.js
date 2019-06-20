@@ -14,7 +14,7 @@ export default class ProductHead extends Component{
         }
         const show = {
             title: 'Show:',
-            item: [5,10,20,50]
+            item: [6,12,18]
         }
         return(
             <div className="product-grid__head">
