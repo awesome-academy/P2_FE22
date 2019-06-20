@@ -6,15 +6,16 @@ import Footer from './components/footer';
 import BreadCrumb from './components/breadcrumb';
 import Product from './components/product';
 import './grid.css';
+
 function App() {
   dotenv.config();
   return (
-    <div className="App">
-      <Header />
-      <BreadCrumb />
-      <Product />
-      <Footer />
-    </div>
+      <div className="App">
+        <Header />
+        <BreadCrumb />
+        <Product />
+        <Footer />
+      </div>
   );
 }
 

@@ -1,0 +1,148 @@
+{
+	"product": [
+		{
+			"id": 1111,
+			"img": "imgs/high--product/high--product-1.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 3,
+			"rates": 12
+		},
+		{
+			"id": 1112,
+			"img": "imgs/high--product/high--product-2.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 1113,
+			"img": "imgs/high--product/high--product-3.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 5,
+			"rates": 12
+		},
+		{
+			"id": 1114,
+			"img": "imgs/high--product/high--product-4.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 2,
+			"rates": 12
+		},
+		{
+			"id": 1115,
+			"img": "imgs/high--product/high--product-5.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 1116,
+			"img": "imgs/high--product/high--product-6.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 1117,
+			"img": "imgs/high--product/high--product-1.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 1118,
+			"img": "imgs/high--product/high--product-2.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 1119,
+			"img": "imgs/high--product/high--product-3.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 3,
+			"rates": 12
+		},
+		{
+			"id": 11110,
+			"img": "imgs/high--product/high--product-4.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 3,
+			"rates": 12
+		},
+		{
+			"id": 11111,
+			"img": "imgs/high--product/high--product-5.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 11112,
+			"img": "imgs/high--product/high--product-6.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 2,
+			"rates": 12
+		},
+		{
+			"id": 11113,
+			"img": "imgs/high--product/high--product-1.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 2,
+			"rates": 12
+		},
+		{
+			"id": 11114,
+			"img": "imgs/high--product/high--product-2.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 11115,
+			"img": "imgs/high--product/high--product-3.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 1,
+			"rates": 12
+		},
+		{
+			"id": 11116,
+			"img": "imgs/high--product/high--product-4.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		},
+		{
+			"id": 11117,
+			"img": "imgs/high--product/high--product-5.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 5,
+			"rates": 12
+		},
+		{
+			"id": 11118,
+			"img": "imgs/high--product/high--product-6.png",
+			"price": "1.150.150",
+			"title": "máy khoan BLACK DECKER",
+			"stars": 4,
+			"rates": 12
+		}
+	]
+}
