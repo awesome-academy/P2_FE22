@@ -2,21 +2,23 @@ import React from 'react';
 import dotenv from 'dotenv';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import Header from './components/header';
-import Footer from './components/footer';
-import BreadCrumb from './components/breadcrumb';
-import Product from './components/product';
-import './grid.css';
+import ListPage from './page/listPage';
+import LoginPage from './page/loginPage';
+import SignUpPage from './page/signUpPage';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
-  dotenv.config();
-  return (
-      <div className="App">
-        <Header />
-        <BreadCrumb />
-        <Product />
-        <Footer />
-      </div>
-  );
+    dotenv.config();
+        return (
+            <Router>
+                <div className="App">
+                    <Header />
+                    <Route path='/product' component={ListPage}/>
+                    <Route path='/login' component={LoginPage}/>
+                    <Route path='/signup' component={SignUpPage}/>
+                </div>
+            </Router>
+    );
 }
 
 export default App;

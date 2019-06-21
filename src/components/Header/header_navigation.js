@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 export default class HeaderNavigation extends Component{
     render(){
         return(
@@ -14,9 +15,9 @@ export default class HeaderNavigation extends Component{
                     <i className="fa fa-twitter"></i></a>
                 <div className="header__navigation__form login">
                     <div className="login__btn">
-                        <a title="Đăng kí">đăng kí</a></div>
+                        <Link to='/signup' title="Đăng kí">đăng kí</Link></div>
                     <div className="login__btn">
-                        <a title="Đăng nhập">đăng nhập</a></div>
+                        <Link to='login' title="Đăng nhập">đăng nhập</Link></div>
                 </div>
             </div>
           </div>
