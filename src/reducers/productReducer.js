@@ -2,7 +2,8 @@ import * as types from './../constants/indexConstant';
 const initState = {
     num: 6,
     value: undefined,
-    filter: undefined
+    filter: undefined,
+    isGrid: true
 };
 export default (state = initState, action) => {
     switch (action.type) {
@@ -14,6 +15,9 @@ export default (state = initState, action) => {
             return state;
         case  types.FILTER_PRODUCT:
             state = {...state, filter: action.filter}
+            return state;
+        case types.CHANGE_STYLE:
+            state = {...state, isGrid: action.isGrid}
             return state;
         default:
             return state;

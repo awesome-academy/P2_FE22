@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import ProductCard from './product_card';
+import ProductCardWidth from './product_card_width';
 import {connect} from 'react-redux';
 import getProductAPI from './../../utils/apiCaller';
 class ProductContent extends Component{
     constructor(props){
         super(props);
         this.state = {
-            arr: []
+            arr: [],
+            classN: "product-grid__content"
         }
-        this.myRef = React.createRef()
     }
     componentDidMount(){
        getProductAPI('product','GET', null).then(res => {
@@ -16,7 +17,17 @@ class ProductContent extends Component{
                arr: res.data
            })
        })
-       this.myRef.current.scrollTop = 0;
+    }
+    componentWillReceiveProps(){
+        if(this.props.isGrid){
+            this.setState({
+                classN: "newreceive-grid__content"
+            })
+        }else {
+            this.setState({
+                classN: "product-grid__content"
+            })
+        }
     }
     sortByAlphabet = (arr = []) => {
         return arr.sort((prev, next) => {
@@ -52,14 +63,19 @@ class ProductContent extends Component{
         })
     }
     render(){
-        const {num, value, filter} = this.props;
-        const {arr} = this.state;
+        const {num, value, filter, isGrid} = this.props;
+        const {arr, classN} = this.state;
         const sorted = this.sortArray(this.filterArray(arr, filter), value)
         return(
-            <div className="product-grid__content"
-                 id="product-grid__content"
-                 ref={this.myRef}>
-                {sorted.slice(0, num).map((item, index) => <ProductCard data={item} key={index}/>)}
+            <div className={`${this.props.classN}__content`}
+                 id="product-grid__content">
+                {sorted.slice(0, num).map((item, index) => {
+                    return (
+                        isGrid ? <ProductCard data={item} key={index}/> 
+                        : <ProductCardWidth data={item} key={index}/>
+                        )
+                })
+                }
             </div>
         );
     }
@@ -68,7 +84,8 @@ const mapStatetoProps = (state) => {
     return {
         num : state.productReducer.num,
         value: state.productReducer.value,
-        filter: state.productReducer.filter
+        filter: state.productReducer.filter,
+        isGrid: state.productReducer.isGrid
     }
 }
 export default connect(mapStatetoProps,null)(ProductContent)

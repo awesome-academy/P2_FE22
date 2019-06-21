@@ -4,14 +4,23 @@ import { order, show } from '../variable/option';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction';
 class ProductHead extends Component{
+    onClickGrid = () => {
+        this.props.changeStyle(true);
+    }
+    onClickList = () => {
+        this.props.changeStyle(false);
+    }
     render(){
+        const {classN} = this.props;
         return(
-            <div className="product-grid__head">
-                <ProductOption option={order} event={this.props.orderProduct}/>
-                <ProductOption option={show} event={this.props.showProduct}/>
-                <div className="product-grid__list-type">
-                    <i className="fa fa-bars product-grid__list-type--item"></i>
-                    <i className="fa fa-th product-grid__list-type--item"></i>
+            <div className={`${classN}__head`}>
+                <ProductOption option={order} event={this.props.orderProduct} classN={classN}/>
+                <ProductOption option={show} event={this.props.showProduct} classN={classN}/>
+                <div className={`${classN}__list-type`}>
+                    <i className={`fa fa-bars ${classN}__list-type--item`}
+                        onClick={this.onClickList}></i>
+                    <i className={`fa fa-th ${classN}__list-type--item`}
+                        onClick={this.onClickGrid}></i>
                 </div>
             </div>
         );
@@ -24,7 +33,11 @@ const mapDispatchtoProps = (dispatch, props) => {
         },
         orderProduct: (value) => {
             dispatch(action.orderProduct(value))
+        },
+        changeStyle: (isGrid) => {
+            dispatch(action.changeStyle(isGrid));
         }
+
     }
 }
 export default connect(null, mapDispatchtoProps)(ProductHead)
