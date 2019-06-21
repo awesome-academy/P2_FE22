@@ -15,7 +15,7 @@ export const show = {
         {name: 12, value: 12},
         {name: 18, value: 28},
         {name: 24, value: 24},
-        {name: 32, value: 32},
+        {name: 30, value: 30},
     ]
 }
 

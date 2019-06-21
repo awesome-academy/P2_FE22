@@ -18,7 +18,7 @@ class Form extends Component {
                 </div>
                 {isCheck && <input className="form-checkbox--mt40" id="formcheck" type="checkbox"/>}
                 {isCheck && <label className="form-checkbox" id="labelCheckbox" for="formcheck">{Check}</label>}
-                {isPass && <a className="miss-pass--link" href="#">bạn quên mật khẩu ?</a>}
+                {isPass && <a className="miss-pass--link" href="javascript:void(0)">bạn quên mật khẩu ?</a>}
                 {btn && <div className='form__btn'>
                     {btn[0] && <Link className="form__btn--dark" to={btn[0].url}>{btn[0].name}</Link>}
                     {btn[1] && <Link className="form__btn--bright" to={btn[1].url}>{btn[1].name}</Link>}

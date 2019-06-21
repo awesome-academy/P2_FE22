@@ -12,7 +12,6 @@ export default class Product extends Component {
                     <ProductGrid />
                 </div>
             </section>
-
         );
     }
 }

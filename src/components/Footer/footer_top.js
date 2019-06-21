@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 export default class FooterTop extends Component{
-    constructor(props){
-        super(props);
-    }
     render(){
         const {data} = this.props;
         return(

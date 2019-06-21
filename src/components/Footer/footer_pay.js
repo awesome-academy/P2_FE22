@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 export default class FooterPay extends Component{
-    constructor(props){
-        super(props);
-    }
     render(){
         const {listPay} = this.props;
         return(
