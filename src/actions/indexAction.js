@@ -17,3 +17,9 @@ export const filterProduct = (filter) => {
         filter: filter
     }
 }
+export const changeStyle = (isGrid) => {
+    return {
+        type: types.CHANGE_STYLE,
+        isGrid: isGrid
+    }
+}

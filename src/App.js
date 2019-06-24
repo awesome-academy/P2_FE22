@@ -13,7 +13,7 @@ function App() {
             <Router>
                 <div className="App">
                     <Header />
-                    <Route path='/product' component={ListPage}/>
+                    <Route exact path='/product' component={ListPage}/>
                     <Route path='/login' component={LoginPage}/>
                     <Route path='/signup' component={SignUpPage}/>
                 </div>

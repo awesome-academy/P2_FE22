@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 export default class BreadCrumb extends Component{
-    // constructor(props){
-        
-    // }
     render(){
         const {breadCrumb} = this.props;
         return(

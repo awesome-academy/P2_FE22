@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 class ProductCard extends Component {
     constructor(props){
         super(props);
@@ -29,7 +30,7 @@ class ProductCard extends Component {
 						</div>
 						<div className="card__btn">
 							<a className="card__btn--buy" href="#" value="{data.id}" >mua ngay</a>
-							<a className="card__btn--info" href="#">xem chi tiết</a>
+							<Link className="card__btn--info" to={`/product/${data.id}`}>xem chi tiết</Link>
 						</div>
 					</div>
 				</div>

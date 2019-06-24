@@ -1,3 +1,4 @@
 export const SHOW_PRODUCT = 'SHOW_PRODUCT';
 export const ORDER_PRODUCT = 'ORDER_PRODUCT';
 export const FILTER_PRODUCT = 'FILTER_PRODUCT';
+export const CHANGE_STYLE = 'CHANGE_STYLE';

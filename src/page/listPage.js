@@ -3,6 +3,7 @@ import Footer from './../components/footer';
 import BreadCrumb from './../components/breadcrumb';
 import Product from './../components/product';
 import '../styles/grid.css';
+import '../styles/list.css';
 class ListPage extends Component {
     render(){
         return(
