@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Share from './facebook_share';
 class MainContentSocial extends Component {
     render(){
         return(
@@ -16,9 +17,10 @@ class MainContentSocial extends Component {
                 <i className="fa fa-google-plus"></i>
               </div>
               <p className="content__number">0</p>
+              
               <div className="content__social-item content__social-item--orange">
                 <i className="fa fa-plus-square"></i>
-                <p>Share</p>
+                <Share></Share>
               </div>
             </div>
         )

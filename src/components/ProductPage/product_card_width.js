@@ -26,7 +26,8 @@ class ProductCardWidth extends Component {
             <div className="card-width">
                 <div className="card">
                     <div className="card__img">
-                        <img className="card__img-img" src={process.env.PUBLIC_URL + data.img} />
+                        <img className="card__img-img" src={process.env.PUBLIC_URL + data.img}
+                                alt="#"/>
                     </div>
                     <div className="card__content">
                         <p className="card__title"> {data.title} </p>

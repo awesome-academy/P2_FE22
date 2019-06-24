@@ -3,11 +3,11 @@ export default class ProductPage extends Component{
     render(){
         return(
             <div className={`${this.props.classN}__page`}>
-                <a className={`${this.props.classN}__page--link`} href="#">trang trước</a>
-                <a className={`${this.props.classN}__page--link`} href="#">1</a>
-                <a className={`${this.props.classN}__page--link`} href="#">2</a>
-                <a className={`${this.props.classN}__page--link`} href="#">3</a>
-                <a className={`${this.props.classN}__page--link`} href="#">trang cuối</a>
+                <a className={`${this.props.classN}__page--link`}>trang trước</a>
+                <a className={`${this.props.classN}__page--link`}>1</a>
+                <a className={`${this.props.classN}__page--link`}>2</a>
+                <a className={`${this.props.classN}__page--link`}>3</a>
+                <a className={`${this.props.classN}__page--link`}>trang cuối</a>
             </div>
         );
     }

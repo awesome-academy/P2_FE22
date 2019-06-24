@@ -7,10 +7,10 @@ class MainImage extends Component {
         const {imglarger, img} = this.props;
         return(
             <div className="main-img">
-                <img src={process.env.PUBLIC_URL + imglarger}/>
+                <img src={process.env.PUBLIC_URL + imglarger} alt="#"/>
                 <div className="main-img--inline">
                     {img.map((item, index) => {
-                        return <img key={index} src={process.env.PUBLIC_URL + item}/>
+                        return <img alt="#" key={index} src={process.env.PUBLIC_URL + item}/>
                     })}
                 </div>
             </div>

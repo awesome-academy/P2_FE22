@@ -1,14 +1,28 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import * as action from '../../actions/indexAction';
 class ButtonTab extends Component{
+    changeTab = (idTab) => {
+        this.props.changeTab(idTab)
+    }
     render(){
         return(
             <div className="tab__btn">
-                <button className="tab__btn--link" onclick="opentag(event, 'info')" id="defaultOpen">THÔNG TIN SẢN
-                PHẨM</button>
-                <button className="tab__btn--link" onclick="opentag(event, 'rate')" id="">ĐÁNH GIÁ - NHẬN XÉT</button>
-                <button className="tab__btn--link" onclick="opentag(event, 'tag')" id="">THẺ TAGS</button>
+                <button className="tab__btn--link"
+                    onClick={() => this.changeTab('info')}>THÔNG TIN SẢN PHẨM</button>
+                <button className="tab__btn--link"
+                    onClick={() =>this.changeTab('rate')}>ĐÁNH GIÁ - NHẬN XÉT</button>
+                <button className="tab__btn--link"
+                    onClick={() =>this.changeTab('tag')}>THẺ TAGS</button>
           </div>
         )
     }
 }
-export default ButtonTab;
+const mapDispatchtoProps = (dispatch, props) => {
+    return {
+        changeTab: (idTab) => {
+            dispatch(action.changeTab(idTab))
+        }
+    }
+}
+export default connect(null, mapDispatchtoProps)(ButtonTab);
