@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+import {connect } from 'react-redux';
+import * as action from '../../actions/indexAction';
 class ProductCardWidth extends Component {
     constructor(props){
         super(props);
@@ -6,6 +9,9 @@ class ProductCardWidth extends Component {
 	stringToPriceFormated(num){
 		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' }).format(num)
 	
+    }
+    selectProduct = (id) => {
+		this.props.selectProduct(id);
 	}
     render(){
 		const {data} = this.props;
@@ -33,7 +39,8 @@ class ProductCardWidth extends Component {
                         <h3 className="card__price"> {this.stringToPriceFormated(data.price)} <span> Đ</span></h3>
                         <div className="card__btn">
                             <a className="card__btn--buy" href="#" value="{data.id}" >mua ngay</a>
-                            <a className="card__btn--info" href="#">xem chi tiết</a>
+                            <Link className="card__btn--info" to={`/product/${data.id}`}
+								onClick={() => this.selectProduct(data.id)}>xem chi tiết</Link>
                         </div>
                     </div>
                 </div>
@@ -41,4 +48,11 @@ class ProductCardWidth extends Component {
         );
     }
 }
-export default ProductCardWidth
+const mapDispatchtoProps = (dispatch, props) => {
+	return {
+		selectProduct: (idProduct) => {
+			dispatch(action.selectProduct(idProduct));
+		}
+	}
+}
+export default connect(null, mapDispatchtoProps)(ProductCardWidth)

@@ -7,9 +7,10 @@ import {loginForm, recommend} from '../components/variable/login_signin';
 import '../styles/login.css';
 class LoginPage extends Component {
     render(){
+        const breadCrumb = ['đăng nhập'];
         return(
             <div>
-                <BreadCrumb breadCrumb='đăng nhập'/>
+                <BreadCrumb breadCrumb={breadCrumb}/>
                 <section className='forms'>
                     <Form value={loginForm}/>
                     <Recommend value={recommend}/>

@@ -23,3 +23,15 @@ export const changeStyle = (isGrid) => {
         isGrid: isGrid
     }
 }
+export const selectProduct = (idProduct) => {
+    return {
+        type: types.SELECT_PRODUCT,
+        idProduct: idProduct
+    }
+}
+export const isSelectProduct = (isSelectProduct) => {
+    return {
+        type: types.IS_SELECT_PRODUCT,
+        isSelectProduct: isSelectProduct
+    }
+}

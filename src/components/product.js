@@ -32,7 +32,8 @@ class Product extends Component {
 }
 const mapStatetoProps = (state) => {
     return {
-        isGrid: state.productReducer.isGrid
+        isGrid: state.productReducer.isGrid,
+        isSelectProduct: state.productReducer.isSelectProduct
     }
 }
 export default connect(mapStatetoProps, null)(Product);
