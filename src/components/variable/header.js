@@ -45,34 +45,6 @@ export const colorList = {
 }
 export const galery = {
     iconTitle: 'fa fa-gift',
-    title: 'SẢN PHẨM NỔI BẬT',
-    icon: 'fa fa-square',
-    itemAside: [
-        {
-            src: '/imgs/sale--product/sale--product-1.png',
-            name: 'máy khoan black decker loại 1',
-            price: '1.550.000 Đ'
-        },
-        {
-            src: '/imgs/sale--product/sale--product-2.png',
-            name: 'máy khoan black decker loại 1',
-            price: '1.550.000 Đ'
-        },
-        {
-            src: '/imgs/sale--product/sale--product-3.png',
-            name: 'máy khoan black decker loại 1',
-            price: '1.550.000 Đ'
-        },
-        {
-            src: '/imgs/sale--product/sale--product-4.png',
-            name: 'máy khoan black decker loại 1',
-            price: '1.550.000 Đ'
-        },
-        {
-            src: '/imgs/sale--product/sale--product-5.png',
-            name: 'máy khoan black decker loại 1',
-            price: '1.550.000 Đ'
-        }
-    ]
+    title: 'SẢN PHẨM NỔI BẬT'
 } 
 

@@ -6,7 +6,14 @@ export default class BreadCrumb extends Component{
             <nav arial-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item active"><a href="javascript:void(0)">trang chủ</a></li>
-                    <li className="breadcrumb-item"><a href="javascript:void(0)">{breadCrumb}</a></li>
+                    {breadCrumb.map((item, index) => {
+                        return(
+                            <li className="breadcrumb-item" key={index}>
+                                <a href="javascript:void(0)">{item}</a>
+                            </li>
+                        )
+                    })}
+                    
                 </ol>
             </nav>
         );

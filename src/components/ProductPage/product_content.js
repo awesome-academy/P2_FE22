@@ -63,11 +63,11 @@ class ProductContent extends Component{
         })
     }
     render(){
-        const {num, value, filter, isGrid} = this.props;
-        const {arr, classN} = this.state;
+        const {num, value, filter, isGrid,classN} = this.props;
+        const {arr} = this.state;
         const sorted = this.sortArray(this.filterArray(arr, filter), value)
         return(
-            <div className={`${this.props.classN}__content`}
+            <div className={`${classN}__content`}
                  id="product-grid__content">
                 {sorted.slice(0, num).map((item, index) => {
                     return (

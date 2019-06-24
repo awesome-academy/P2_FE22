@@ -3,7 +3,9 @@ const initState = {
     num: 6,
     value: undefined,
     filter: undefined,
-    isGrid: true
+    isGrid: true,
+    idProduct: undefined,
+    isSelectProduct: false
 };
 export default (state = initState, action) => {
     switch (action.type) {
@@ -18,6 +20,12 @@ export default (state = initState, action) => {
             return state;
         case types.CHANGE_STYLE:
             state = {...state, isGrid: action.isGrid}
+            return state;
+        case types.SELECT_PRODUCT:
+            state = {...state, idProduct: action.idProduct, isSelectProduct: true}
+            return state;
+        case types.IS_SELECT_PRODUCT:
+            state = {...state, isSelectProduct: action.isSelectProduct}
             return state;
         default:
             return state;

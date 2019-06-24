@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import {connect } from 'react-redux';
+import * as action from '../../actions/indexAction';
 class ProductCard extends Component {
     constructor(props){
         super(props);
 	}
 	stringToPriceFormated(num){
-		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' }).format(num)
+		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' })
+			.format(num)
 	
+	}
+	selectProduct = (id) => {
+		this.props.selectProduct(id);
 	}
     render(){
 		const {data} = this.props;
@@ -21,7 +27,8 @@ class ProductCard extends Component {
             <div className="product__card">
 					<div className="card">
 						<img className="card__img" src={process.env.PUBLIC_URL + data.img} />
-						<h3 className="card__price"> {this.stringToPriceFormated(data.price)} <span> Đ</span></h3>
+						<h3 className="card__price"> {this.stringToPriceFormated(data.price)}
+							<span> Đ</span></h3>
 						<p className="card__title"> {data.title} </p>
 						<div className="card__evaluate">
 							{stars}
@@ -30,11 +37,19 @@ class ProductCard extends Component {
 						</div>
 						<div className="card__btn">
 							<a className="card__btn--buy" href="#" value="{data.id}" >mua ngay</a>
-							<Link className="card__btn--info" to={`/product/${data.id}`}>xem chi tiết</Link>
+							<Link className="card__btn--info" to={`/product/${data.id}`}
+								onClick={() => this.selectProduct(data.id)}>xem chi tiết</Link>
 						</div>
 					</div>
 				</div>
         );
     }
 }
-export default ProductCard
+const mapDispatchtoProps = (dispatch, props) => {
+	return {
+		selectProduct: (idProduct) => {
+			dispatch(action.selectProduct(idProduct));
+		}
+	}
+}
+export default connect(null, mapDispatchtoProps)(ProductCard)
