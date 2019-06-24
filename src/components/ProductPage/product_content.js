@@ -3,6 +3,9 @@ import ProductCard from './product_card';
 import {connect} from 'react-redux';
 import getProductAPI from './../../utils/apiCaller';
 class ProductContent extends Component{
+    constructor(props){
+        super(props);
+    }
     state = {
         arr: []
     }
@@ -13,18 +16,37 @@ class ProductContent extends Component{
            })
        })
     }
+    sortAlpha = (arr) => {
+        return arr.sort((prev, next) => {
+            let prevTitle = prev.title.toLowerCase();
+            let nextTitle = next.title.toLowerCase();
+            return (prevTitle < nextTitle) ? -1 : 1;
+        })
+    }
+    sortArray = (arr, key = undefined) => {
+        if(key == 'title'){
+            this.sortAlpha(arr);
+        }
+        return arr.sort((prev, next) => {
+          return prev[key] - next[key];
+        })
+      } 
     render(){
+        const {num, value} = this.props;
         const {arr} = this.state;
+        const sorted = this.sortArray(arr, value)
+        console.log(value)
         return(
             <div className="product-grid__content" id="product-grid__content">
-                {arr.map((item, index) => <ProductCard data={item} key={index}/>)}
+                {sorted.slice(0, num).map((item, index) => <ProductCard data={item} key={index}/>)}
             </div>
         );
     }
 }
 const mapStatetoProps = (state) => {
     return {
-        arr : state.productReducer
+        num : state.productReducer.num,
+        value: state.productReducer.value
     }
 }
-export default connect(mapStatetoProps)(ProductContent)
+export default connect(mapStatetoProps,null)(ProductContent)

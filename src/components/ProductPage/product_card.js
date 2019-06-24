@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 class ProductCard extends Component {
     constructor(props){
         super(props);
-    }
+	}
+	stringToPriceFormated(num){
+		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' }).format(num)
+	
+	}
     render(){
 		const {data} = this.props;
 		let stars = [], emptyStar = [];
@@ -16,7 +20,7 @@ class ProductCard extends Component {
             <div className="product__card">
 					<div className="card">
 						<img className="card__img" src={process.env.PUBLIC_URL + data.img} />
-						<h3 className="card__price"> {data.price} <span> Đ</span></h3>
+						<h3 className="card__price"> {this.stringToPriceFormated(data.price)} <span> Đ</span></h3>
 						<p className="card__title"> {data.title} </p>
 						<div className="card__evaluate">
 							{stars}
