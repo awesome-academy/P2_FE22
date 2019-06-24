@@ -9,7 +9,8 @@ export default class FooterPay extends Component{
                     {listPay.map((item, index) => {
                         return(
                             <img key={index}
-                                 src={process.env.PUBLIC_URL + item}/>
+                                 src={process.env.PUBLIC_URL + item}
+                                 alt="#"/>
                         );
                     })}
                 </div>

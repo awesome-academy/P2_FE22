@@ -4,7 +4,9 @@ export default class HeaderCenter extends Component{
     return(
       <div className="header__center--wrapper">
         <div className="header__center">
-            <img className="header__center-logo" src={process.env.PUBLIC_URL + '/imgs/logo.png'}/>
+            <img className="header__center-logo"
+                  src={process.env.PUBLIC_URL + '/imgs/logo.png'}
+                  alt="#"/>
           <div className="header__center-middle">
             <div className="header__center-contact">
               <h2 className="header__center-heading">hotline :</h2>

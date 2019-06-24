@@ -25,7 +25,7 @@ class AsideList extends Component{
                 <Aside aside={productPortfolio} event={this.props.filterProduct}/>
                 {!this.props.isSelectProduct && <Aside aside={priceList}  event={this.props.filterProduct}/>}
                 {!this.props.isSelectProduct && <Aside aside={colorList}  event={this.props.filterProduct}/>}
-                <AsideImage aside={this.state.arr} style={galery}/>
+                {!this.props.isSelectProduct && <AsideImage aside={this.state.arr} style={galery}/>}
             </div>
         );
     }

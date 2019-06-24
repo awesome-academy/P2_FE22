@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 class TextTab extends Component{
     render(){
         return(
-            <p class="tab__content--text">{this.props.text}</p>
+            <p className="tab__content--text">{this.props.text}</p>
         )
     }
 }

@@ -26,7 +26,8 @@ class ProductCard extends Component {
         return(
             <div className="product__card">
 					<div className="card">
-						<img className="card__img" src={process.env.PUBLIC_URL + data.img} />
+						<img className="card__img" src={process.env.PUBLIC_URL + data.img}
+								alt="#"/>
 						<h3 className="card__price"> {this.stringToPriceFormated(data.price)}
 							<span> Đ</span></h3>
 						<p className="card__title"> {data.title} </p>
