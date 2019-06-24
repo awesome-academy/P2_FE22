@@ -1718,6 +1718,9 @@ button {
   display: none;
   border: 1px solid #e1e1e1;
 }
+.section-detail .main-tab .display_block {
+  display: block;
+}
 
 .section-detail .main-tab .tab__content--text {
   margin: 10px 10px 15px;

@@ -25,7 +25,7 @@ class AsideImage extends Component{
                                   onClick={() => this.selectProduct(item.id)}
                                   key={index}>
                                 <li className="aside__list-item height-120" >
-                                    <img className="aside__list-item--img"
+                                    <img className="aside__list-item--img" alt="#"
                                             src={process.env.PUBLIC_URL + item.img}
                                         />
                                     <div className="aside__list-item__content">

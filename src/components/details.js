@@ -5,13 +5,14 @@ import MainContentCenter from './Detail/main_center';
 import MainContentSelect from './Detail/main_select';
 import MainContentAmount from './Detail/main_amount';
 import MainContentSocial from './Detail/main_social';
-import MainContent from './Detail/main_content';
 import ButtonTab from './Detail/button_tab';
 import TextTab from './Detail/text_tab';
+import Comment from './Detail/facebook_comment';
 import {connect} from 'react-redux';
 class Details extends Component {
     render(){
-        const {product} = this.props;
+        const {product, idTab} = this.props;
+        const classN= "tab__content display_block";
         return <div className="main-detail">
             <div className="flex">
                 <MainImage imglarger={product.img} img={product.detailsImg}/>
@@ -29,21 +30,16 @@ class Details extends Component {
             </div>
             <div className="main-tab">
                 <ButtonTab />
-                <MainContent id="info">
-                    {product.info.map((item, index) => {
+                {/* conditional render tab  */}
+                <div className={classN} id="info" ref="info">
+                    { idTab == 'info' && product.info.map((item, index) => {
+                        return <TextTab key={index} text={item}></TextTab>
+                    })} 
+                    { idTab == 'rate' && <Comment></Comment>}
+                    { idTab == 'tag' && product.info.slice(0, 2).map((item, index) => {
                         return <TextTab key={index} text={item}></TextTab>
                     })}
-                </MainContent>
-                <MainContent id="info">
-                    {product.info.map((item, index) => {
-                        return <TextTab key={index} text={item}></TextTab>
-                    })}
-                </MainContent>
-                <MainContent id="info">
-                    {product.info.map((item, index) => {
-                        return <TextTab key={index} text={item}></TextTab>
-                    })}
-                </MainContent>
+                </div>
             </div>
             <section className="section-gridproduct"></section>
         </div>
@@ -51,7 +47,8 @@ class Details extends Component {
 }
 const mapStatetoProps = (state) => {
     return {
-        idProduct: state.productReducer.idProduct
+        idProduct: state.productReducer.idProduct,
+        idTab: state.productReducer.idTab
     }
 }
 export default connect(mapStatetoProps, null)(Details)

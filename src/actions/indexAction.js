@@ -35,3 +35,9 @@ export const isSelectProduct = (isSelectProduct) => {
         isSelectProduct: isSelectProduct
     }
 }
+export const changeTab = (idTab) => {
+    return {
+        type: types.CHANGE_TAB,
+        idTab: idTab
+    }
+}
