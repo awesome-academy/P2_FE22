@@ -11,3 +11,9 @@ export const orderProduct = (value) => {
         value: value
     }
 }
+export const filterProduct = (filter) => {
+    return {
+        type: types.FILTER_PRODUCT,
+        filter: filter
+    }
+}

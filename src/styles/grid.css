@@ -1249,7 +1249,7 @@ button {
 
 .section-gridproduct .product__card .card__img {
   max-width: 100%;
-  height: auto;
+  height: 160px;
   margin: 0 auto 30px;
 }
 

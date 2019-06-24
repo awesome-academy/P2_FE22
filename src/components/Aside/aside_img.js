@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 export default class AsideImage extends Component{
-    constructor(props){
-        super(props);
-    }
     render(){
         const {aside} = this.props;
         return(

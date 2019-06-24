@@ -8,8 +8,8 @@ export default class BreadCrumb extends Component{
         return(
             <nav arial-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item active"><a href="#">trang chủ</a></li>
-                    <li className="breadcrumb-item"><a href="#">{breadCrumb}</a></li>
+                    <li className="breadcrumb-item active"><a href="javascript:void(0)">trang chủ</a></li>
+                    <li className="breadcrumb-item"><a href="javascript:void(0)">{breadCrumb}</a></li>
                 </ol>
             </nav>
         );
