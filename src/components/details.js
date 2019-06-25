@@ -5,6 +5,8 @@ import MainContentCenter from './Detail/main_center';
 import MainContentSelect from './Detail/main_select';
 import MainContentAmount from './Detail/main_amount';
 import MainContentSocial from './Detail/main_social';
+import SectionHeading from './ProductPage/section_heading';
+import Rencently from './Detail/recently';
 import ButtonTab from './Detail/button_tab';
 import TextTab from './Detail/text_tab';
 import Comment from './Detail/facebook_comment';
@@ -41,7 +43,12 @@ class Details extends Component {
                     })}
                 </div>
             </div>
-            <section className="section-gridproduct"></section>
+            <section className="section-gridproduct">
+                <SectionHeading/>
+                <div className="product-grid">
+                    <Rencently/>
+                </div>
+            </section>
         </div>
     }
 }

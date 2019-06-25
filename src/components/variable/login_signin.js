@@ -2,7 +2,7 @@ export const loginForm = {
     id: 'login',
     title: 'Thông tin đăng nhập',
     input: [
-        {type: 'text', label: 'Email', id: 'inputEmail' },
+        {type: 'email', label: 'Email', id: 'inputEmail' },
         {type: 'password', label: 'Mật khẩu', id: 'inputPassword' }
     ],
     isCheck: true,
@@ -28,7 +28,7 @@ export const infoForm = {
     input: [
         {type: 'text', label: 'Họ và tên', id: 'inputName' },
         {type: 'email', label: 'Email', id: 'email' },
-        {type: 'text', label: 'Số điện thoại', id: 'inputPhone' },
+        {type: 'number', label: 'Số điện thoại', id: 'inputPhone' },
         {type: 'text', label: 'Địa chỉ', id: 'inputAddress' }
     ],
     isCheck: true,
@@ -38,7 +38,7 @@ export const signUp = {
     id: 'signup',
     title: 'thông tin đăng nhập',
     input: [
-        {type: 'text', label: 'Email', id: 'inputEmail' },
+        {type: 'email', label: 'Email', id: 'inputEmail' },
         {type: 'password', label: 'Mật khẩu', id: 'inputPassword' }
     ],
     btn: [
