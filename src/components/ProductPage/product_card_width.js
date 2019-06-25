@@ -2,17 +2,19 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import {connect } from 'react-redux';
 import * as action from '../../actions/indexAction';
+import * as cartAction from '../../actions/cartAction';
+import {selectProduct, buyProduct} from '../../utils/product';
+import {formatPrice} from '../../utils/formatPrice';
 class ProductCardWidth extends Component {
     constructor(props){
         super(props);
 	}
-	stringToPriceFormated(num){
-		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' }).format(num)
-	
-    }
     selectProduct = (id) => {
-		this.props.selectProduct(id);
+		this.props.selectProduct(selectProduct(id));
 	}
+	buyProduct = (product) => {
+        this.props.buyProduct(buyProduct(product))
+    }
     render(){
 		const {data} = this.props;
 		let stars = [], emptyStar = [];
@@ -37,9 +39,13 @@ class ProductCardWidth extends Component {
                             <p className="card__evaluate-rate">({data.rates}) đánh giá</p>
                         </div>
                         <p className="card__text">{data.shortDescription}</p>
-                        <h3 className="card__price"> {this.stringToPriceFormated(data.price)} <span> Đ</span></h3>
+                        <h3 className="card__price"> {formatPrice(data.price)}
+                            <span> Đ</span></h3>
                         <div className="card__btn">
-                            <a className="card__btn--buy" href="#" value="{data.id}" >mua ngay</a>
+                            <a className="card__btn--buy"
+                                onClick={() => this.buyProduct(
+                                    {id: data.id, color: data.color[0], amount: 1})}
+                                >mua ngay</a>
                             <Link className="card__btn--info" to={`/product/${data.id}`}
 								onClick={() => this.selectProduct(data.id)}>xem chi tiết</Link>
                         </div>
@@ -53,7 +59,10 @@ const mapDispatchtoProps = (dispatch, props) => {
 	return {
 		selectProduct: (idProduct) => {
 			dispatch(action.selectProduct(idProduct));
-		}
+        },
+        buyProduct: (product) => {
+            dispatch(cartAction.buyProduct(product))
+        }
 	}
 }
 export default connect(null, mapDispatchtoProps)(ProductCardWidth)
