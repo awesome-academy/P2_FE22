@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import MainImage from './Detail/main_img';
 import MainContentTop from './Detail/main_top';
 import MainContentCenter from './Detail/main_center';
-import MainContentSelect from './Detail/main_select';
 import MainContentAmount from './Detail/main_amount';
 import MainContentSocial from './Detail/main_social';
 import SectionHeading from './ProductPage/section_heading';
@@ -25,8 +24,9 @@ class Details extends Component {
                         price={product.price}/>
                     <MainContentCenter
                         description={product.shortDescription}/>
-                    <MainContentSelect option={product.color}/>
-                    <MainContentAmount />
+                    <MainContentAmount
+                        id={product.id}
+                        option={product.color}/>
                     <MainContentSocial />
                 </div>
             </div>

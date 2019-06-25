@@ -4,7 +4,6 @@ const initState = {
     value: undefined,
     filter: undefined,
     isGrid: true,
-    idProduct: undefined,
     isSelectProduct: false,
     idTab: 'info'
 };
@@ -23,7 +22,7 @@ export default (state = initState, action) => {
             state = {...state, isGrid: action.isGrid}
             return state;
         case types.SELECT_PRODUCT:
-            state = {...state, idProduct: action.idProduct, isSelectProduct: true}
+            state = {...state, isSelectProduct: true}
             return state;
         case types.IS_SELECT_PRODUCT:
             state = {...state, isSelectProduct: action.isSelectProduct}

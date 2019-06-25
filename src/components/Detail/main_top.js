@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {formatPrice} from '../../utils/formatPrice';
 class MainContentTop extends Component {
     stringToPriceFormated(num){
 		return new Intl.NumberFormat('de-DE', { style: 'decimal', currency: 'VND' })
@@ -22,7 +23,7 @@ class MainContentTop extends Component {
                 <p className="content__comment">({rates}) đánh giá</p>
                 <a className="content__write" >gửi bình luận của bạn</a>
               </div>
-              <p className="content__price">giá: {this.stringToPriceFormated(price)} Đ</p>
+              <p className="content__price">giá: {formatPrice(price)} Đ</p>
             </div>
         );
     }

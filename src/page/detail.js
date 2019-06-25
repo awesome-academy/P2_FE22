@@ -18,7 +18,7 @@ class Detail extends Component {
                 info: [],
                 img: ""
             },
-            idProduct: this.props.idProduct || this.props.match.params.id
+            idProduct: this.props.match.params.id
         }
     }
     componentDidMount(){

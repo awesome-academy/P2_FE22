@@ -5,3 +5,4 @@ export const CHANGE_STYLE = 'CHANGE_STYLE';
 export const SELECT_PRODUCT = 'SELECT_PRODUCT';
 export const IS_SELECT_PRODUCT = 'IS_SELECT_PRODUCT';
 export const CHANGE_TAB = 'CHANGE_TAB';
+export const BUY_PRODUCT = 'BUY_PRODUCT';

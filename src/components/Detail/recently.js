@@ -10,6 +10,7 @@ class Rencently extends Component {
         }
     }
     convertArraytoQuery = (array) => {
+        if(array.length == 0) return 'id';
         return array.map(item => `id=${item}&`).join("");
     }
     componentDidMount(){

@@ -87,6 +87,9 @@ a {
 a::first-letter {
   text-transform: uppercase;
 }
+option::first-letter {
+  text-transform: uppercase; /* change first letter to uppercase */
+}
 
 img {
   display: block;
