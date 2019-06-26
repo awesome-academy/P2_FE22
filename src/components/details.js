@@ -26,7 +26,8 @@ class Details extends Component {
                         description={product.shortDescription}/>
                     <MainContentAmount
                         id={product.id}
-                        option={product.color}/>
+                        option={product.color}
+                        price={product.price}/>
                     <MainContentSocial />
                 </div>
             </div>

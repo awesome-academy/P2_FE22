@@ -256,7 +256,6 @@ button {
 .header__navbar {
   font-size: 1.2rem;
   width: 100%;
-  overflow: hidden;
   margin: 0 auto;
   max-width: 1140px;
 }
@@ -338,21 +337,6 @@ button {
   padding: 2.5rem 2rem;
   position: relative;
 }
-
-.header__navbar__cart::after {
-  position: absolute;
-  content: "0";
-  font-size: 1.4rem;
-  color: #fff;
-  line-height: 2.2rem;
-  background: #f5bd10;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  top: 23%;
-  left: 46%;
-}
-
 .header__navbar__cart:hover {
   -webkit-transition: .7s;
   transition: .7s;
@@ -1317,6 +1301,7 @@ button {
 }
 
 .section-listproduct .card-width .card__btn--buy {
+  cursor: pointer;
   margin-right: 5px;
   width: 112px;
   background: #f5bd10;
@@ -1590,7 +1575,21 @@ button {
     margin: 0 auto 40px;
   }
 }
-
+.cart-count {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  position: absolute;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 2.2rem;
+  background: #f5bd10;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  top: 23%;
+  left: 46%;
+}
 * {
   font-family: 'Roboto', sans-serif;
 }
