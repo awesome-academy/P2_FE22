@@ -262,6 +262,7 @@ button {
 }
 
 .header__navbar--wrapper {
+  position: relative;
   width: 100%;
   background: #252525;
   margin-bottom: 2rem;
@@ -347,7 +348,6 @@ button {
 }
 
 .header__navbar--link {
-  position: relative;
   display: block;
 }
 

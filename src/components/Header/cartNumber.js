@@ -20,9 +20,8 @@ class CartNumber extends Component {
         return(
             <div>
                 <i className="header__navbar__cart fa fa-shopping-basket"
-                onClick={this.onClick}>
-                <p className="cart-count">{count}</p>
-                
+                   onClick={this.onClick}>
+                    <p className="cart-count">{count}</p>
                 </i>
                 {!isHide && <ListCart/>}
             </div>

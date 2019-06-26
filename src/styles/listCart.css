@@ -1,9 +1,10 @@
 .list-cart {
     right: 0;
+    top: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    font-family: inherit;
+    user-select: none;
     font-size: 14px;
-    position: fixed;
+    position: absolute;
     z-index: 30;
     border-radius: 5px;
     background-color: #fff;
@@ -16,7 +17,7 @@
     padding: 5px;
 }
 .list-cart__item:not(:last-child) {
-    border-bottom: 1px solid #636363;
+    border-bottom: 1px solid #dedede;
 }
 .list-cart__img {
     width: 40px;
@@ -36,11 +37,14 @@
     border-radius: 50%;
 }
 .list-cart__content {
+    margin-left: 10px;
     align-self: center;
 }
 .list-cart__title {
     text-transform: uppercase;
+    line-height: initial;
     font-weight: 700;
+    width: 153px;
     color: #252525;
 }
 .list-cart__price {

@@ -47,7 +47,9 @@ class ProductCardWidth extends Component {
                                     {   id: data.id,
                                         color: data.color[0],
                                         amount: 1,
-                                        price: data.price
+                                        price: data.price,
+										title: data.title,
+										img: data.img
                                     })}
                                 >mua ngay</a>
                             <Link className="card__btn--info" to={`/product/${data.id}`}
