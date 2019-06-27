@@ -30,13 +30,15 @@ class SignUpPage extends Component {
     onSubmit = (e) => {
         const data = Object.assign(this.state,{
             id: shortid.generate(),
-            rule: 'user'
+            rule: 'user',
+            cart: [],
+            order: []
         })
+        alert('Đăng kí thành công')
         callAPI('user', 'POST', data)
             .then(
                 localStorage.setItem(process.env.REACT_APP_USER_LOCAL,data.id)
-                )
-        e.preventDefault();
+            )
     }
     render(){
         const breadCrumb = ['đăng kí'];

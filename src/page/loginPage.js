@@ -1,12 +1,15 @@
 import React, { Component} from 'react';
 import md5 from 'md5';
+import {connect} from 'react-redux';
+import * as loginAction from '../actions/loginAction';
+import * as cartAction from '../actions/cartAction';
 import Footer from './../components/footer';
 import BreadCrumb from './../components/breadcrumb';
 import Form from '../components/Login_SignUp/form';
 import Recommend from '../components/Login_SignUp/recommend';
 import {loginForm, recommend} from '../components/variable/login_signin';
 import callAPI from '../utils/apiCaller';
-import {isExist} from '../utils/user';
+import {isExist, checkLocalStorage} from '../utils/user';
 import '../styles/login.css';
 class LoginPage extends Component {
     constructor(props){
@@ -34,7 +37,10 @@ class LoginPage extends Component {
             .then(res => {
                 let index = isExist(res.data, Email, Password);
                 if(index !== -1){
-                    localStorage.setItem(process.env.REACT_APP_USER_LOCAL,res.data[index].id)
+                    this.props.isLogin();
+                    checkLocalStorage(res.data[index].id,
+                                        res.data[index].cart,
+                                        this.props.buyProduct)
                     this.props.history.push('/product')
                 }else {
                     alert('Sai tài khoản hoặc mật khẩu !!!')
@@ -59,4 +65,14 @@ class LoginPage extends Component {
         );
     }
 }
-export default LoginPage
+const mapDispatchtoProps = (dispatch, props) => {
+    return {
+        isLogin: () => {
+            dispatch(loginAction.isLogin())
+        },
+        buyProduct: (product) => {
+            dispatch(cartAction.buyProduct(product))
+        }
+    }
+}
+export default connect(null, mapDispatchtoProps)(LoginPage)

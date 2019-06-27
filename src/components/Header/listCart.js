@@ -3,16 +3,31 @@ import {connect} from 'react-redux';
 import * as action from '../../actions/cartAction';
 import {formatPrice} from '../../utils/formatPrice';
 import {removeProduct} from '../../utils/product';
+import {onPay} from '../../utils/user';
 import '../../styles/listCart.css';
 class ListCart extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            cart: JSON.parse(localStorage.getItem('cart')) || []
+        }
+    }
     removeProduct = (product) => {
         this.props.removeProduct(removeProduct(product))
     }
+    onPay = () => {
+        onPay(this.props.isPayment);
+    }
+    componentDidMount(){
+        
+    }
     render(){
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+        const {cart} = this.state;
         return(
             <ul className="list-cart">
                 {cart.map((item, index) => {
+                    total += item.price;
                     return(
                         <li className="list-cart__item" key={index}>
                             <img className='list-cart__img'
@@ -31,7 +46,13 @@ class ListCart extends Component {
                     )
                 })}
                 <li className="list-cart__item">
-                    <a className='list-cart__btn'>thanh toán</a>
+                    <a className="list-cart__name">tổng : </a>
+                    <a className='list-cart__total'>{formatPrice(total)}
+                        <span> Đ</span></a>
+                </li>
+                <li className="list-cart__item">
+                    <a className='list-cart__btn'
+                        onClick={this.onPay}>thanh toán</a>
                 </li>
             </ul>
         );
@@ -46,6 +67,9 @@ const mapDispatchtoProps = (dispatch, props) => {
     return {
         removeProduct: (product) => {
             dispatch(action.removeProduct(product))
+        },
+        isPayment: () => {
+            dispatch(action.isPayment())
         }
     }
 }

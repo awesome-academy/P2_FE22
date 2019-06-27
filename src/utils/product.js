@@ -5,7 +5,7 @@ const isExist = (arr, product) => {
             );
     })
 }
-const addProduct = (arr,product) => {
+export const addProduct = (arr,product) => {
     return arr.map(item => {
       return (
         item.id == product.id && item.color == product.color ? {...item, amount: item.amount + product.amount,price: item.price + product.price} : item

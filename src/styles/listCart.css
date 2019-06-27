@@ -65,6 +65,7 @@
     transition: .7s;
 }
 .list-cart__btn {
+    width: 130px;
     cursor: pointer;
     background-color: #f5bd10;
     text-align: center;
@@ -73,4 +74,25 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px;
+}
+.list-cart__name {
+    padding: 10px;
+    text-transform: uppercase;
+    line-height: initial;
+    font-weight: 700;
+    width: 153px;
+    color: #252525;
+}
+.list-cart__total {
+    user-select: text;
+    font-size: 14px;
+    width: 130px;
+    color: #ff0000;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px;
+}
+.flex-auto {
+    flex: auto;
 }
