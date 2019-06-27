@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import getRecentlyProduct from '../../utils/apiCaller';
 import ProductCard from '../ProductPage/product_card';
+import {convertArraytoQuery} from '../../utils/product';
 import {connect} from 'react-redux';
 class Rencently extends Component {
     constructor(props){
@@ -9,12 +10,8 @@ class Rencently extends Component {
             arr: []
         }
     }
-    convertArraytoQuery = (array) => {
-        if(array.length == 0) return 'id';
-        return array.map(item => `id=${item}&`).join("");
-    }
     componentDidMount(){
-        const query = this.convertArraytoQuery(this.props.recently);
+        const query = convertArraytoQuery(this.props.recently);
         const endpoint = `product?${query}`;
         getRecentlyProduct(endpoint, 'GET', null)
             .then(res => {

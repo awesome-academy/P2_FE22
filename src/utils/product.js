@@ -7,11 +7,9 @@ const isExist = (arr, product) => {
 }
 const addProduct = (arr,product) => {
     return arr.map(item => {
-      return item.id == product.id && item.color == product.color ?
-        {   ...item,
-            amount: item.amount + product.amount,
-            price: item.price + product.price
-        } : item
+      return (
+        item.id == product.id && item.color == product.color ? {...item, amount: item.amount + product.amount,price: item.price + product.price} : item
+        );
     })
   }
 export const selectProduct = (id) => {
@@ -38,10 +36,8 @@ export const buyProduct = (product) => {
         cart = JSON.parse(localStorage.getItem('cart'))
         if(isExist(cart, product) > -1){
             cart = addProduct(cart, product);
-            console.log('true', cart)
         }else{
             cart = cart.concat(product);
-            console.log('false', cart)
         }
         localStorage.setItem('cart', JSON.stringify(cart))
         return cart;
@@ -54,4 +50,8 @@ export const removeProduct = (product) => {
     );
     localStorage.setItem('cart', JSON.stringify(cart))
     return cart;
+}
+export const convertArraytoQuery = (array) => {
+    if(array.length == 0) return 'id';
+    return array.map(item => `id=${item}&`).join("");
 }

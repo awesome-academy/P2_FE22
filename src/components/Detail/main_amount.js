@@ -34,7 +34,9 @@ class MainContentAmount extends Component {
                             id: this.props.id,
                             color: this.refs.color.value,
                             amount: Number(this.refs.amount.value) || 1,
-                            price: Number(this.refs.amount.value)*price || price})
+                            price: Number(this.refs.amount.value)*price || price,
+                            title: this.props.title,
+                            img: this.props.img})
                         }>mua ngay</a>
                 </div>
             </div> 
