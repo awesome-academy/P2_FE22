@@ -7,7 +7,7 @@ class MainContentAmount extends Component {
         this.props.buyProduct(buyProduct(product))
     }
     render(){
-        const {option} = this.props
+        const {option, price} = this.props
         return(
             <div>
                 <div className="main-content--select">
@@ -33,7 +33,8 @@ class MainContentAmount extends Component {
                         onClick={() => this.buyProduct({
                             id: this.props.id,
                             color: this.refs.color.value,
-                            amout: Number(this.refs.amount.value) || 1})
+                            amount: Number(this.refs.amount.value) || 1,
+                            price: Number(this.refs.amount.value)*price || price})
                         }>mua ngay</a>
                 </div>
             </div> 

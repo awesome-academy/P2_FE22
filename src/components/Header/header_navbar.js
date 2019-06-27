@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import CartNumber from './cartNumber';
 export default class HeaderNavbar extends Component{
     state = {
         class: 'header__navbar__menu'
@@ -29,7 +30,7 @@ export default class HeaderNavbar extends Component{
                         <a className="header__navbar__menu-item" >dịch vụ</a>
                         <a className="header__navbar__menu-item" >liên hệ</a></nav>
                         <a className="header__navbar--link">
-                            <i className="header__navbar__cart fa fa-shopping-basket"></i>
+                            <CartNumber/>
                         </a>
                 </div>
             </div>

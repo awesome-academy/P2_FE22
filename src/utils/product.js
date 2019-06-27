@@ -1,3 +1,19 @@
+const isExist = (arr, product) => {
+    return arr.findIndex(item => {
+        return (
+            item.id == product.id && item.color == product.color
+            );
+    })
+}
+const addProduct = (arr,product) => {
+    return arr.map(item => {
+      return item.id == product.id && item.color == product.color ?
+        {   ...item,
+            amount: item.amount + product.amount,
+            price: item.price + product.price
+        } : item
+    })
+  }
 export const selectProduct = (id) => {
     let recent = [];
     if(localStorage.getItem('recent') == null){
@@ -20,8 +36,22 @@ export const buyProduct = (product) => {
         return cart;
     }else {
         cart = JSON.parse(localStorage.getItem('cart'))
-        cart.push(product);
+        if(isExist(cart, product) > -1){
+            cart = addProduct(cart, product);
+            console.log('true', cart)
+        }else{
+            cart = cart.concat(product);
+            console.log('false', cart)
+        }
         localStorage.setItem('cart', JSON.stringify(cart))
         return cart;
     }
+}
+export const removeProduct = (product) => {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart =  cart.filter(item => {
+        return JSON.stringify(item) !== JSON.stringify(product)}
+    );
+    localStorage.setItem('cart', JSON.stringify(cart))
+    return cart;
 }

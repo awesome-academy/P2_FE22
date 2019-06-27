@@ -5,3 +5,9 @@ export const buyProduct = (product) => {
         product: product
     }
 }
+export const removeProduct = (product) => {
+    return {
+        type: types.REMOVE_PRODUCT,
+        product: product
+    }
+}

@@ -44,7 +44,11 @@ class ProductCardWidth extends Component {
                         <div className="card__btn">
                             <a className="card__btn--buy"
                                 onClick={() => this.buyProduct(
-                                    {id: data.id, color: data.color[0], amount: 1})}
+                                    {   id: data.id,
+                                        color: data.color[0],
+                                        amount: 1,
+                                        price: data.price
+                                    })}
                                 >mua ngay</a>
                             <Link className="card__btn--info" to={`/product/${data.id}`}
 								onClick={() => this.selectProduct(data.id)}>xem chi tiết</Link>

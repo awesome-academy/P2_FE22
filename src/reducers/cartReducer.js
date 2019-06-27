@@ -12,7 +12,10 @@ export default (state = initCart, action) => {
         case types.BUY_PRODUCT:
             state = {...state,
                     cart: [...action.product]}
-            //console.log(action.product)
+            return state;
+        case types.REMOVE_PRODUCT:
+            state = {...state,
+                    cart: [...action.product]}
             return state;
         default:
             return state

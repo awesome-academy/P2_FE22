@@ -339,21 +339,6 @@ button {
   padding: 2.5rem 2rem;
   position: relative;
 }
-
-.header__navbar__cart::after {
-  position: absolute;
-  content: attr(content-value);
-  font-size: 1.4rem;
-  color: #fff;
-  line-height: 2.2rem;
-  background: #f5bd10;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  top: 23%;
-  left: 46%;
-}
-
 .header__navbar__cart:hover {
   -webkit-transition: .7s;
   transition: .7s;
@@ -362,6 +347,7 @@ button {
 }
 
 .header__navbar--link {
+  position: relative;
   display: block;
 }
 
@@ -1299,6 +1285,7 @@ button {
 }
 
 .section-gridproduct .product__card .card__btn--buy {
+  cursor: pointer;
   margin-right: 5px;
   width: 112px;
   background: #f5bd10;
@@ -1573,7 +1560,21 @@ button {
         justify-content:  space-between;
   }
 }
-
+.cart-count {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  position: absolute;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 2.2rem;
+  background: #f5bd10;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  top: 23%;
+  left: 46%;
+}
 * {
   font-family: 'Roboto', sans-serif;
 }
