@@ -39,6 +39,9 @@ class SignUpPage extends Component {
             .then(
                 localStorage.setItem(process.env.REACT_APP_USER_LOCAL,data.id)
             )
+            .then(
+                localStorage.setItem(process.env.REACT_APP_ORDER_LOCAL,'[]')
+            )
     }
     render(){
         const breadCrumb = ['đăng kí'];

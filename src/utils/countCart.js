@@ -4,11 +4,6 @@ const isExistid = (arr, product) => {
         return (item.id == product.id);
     })
 }
-const isExistColor = (arr, product) => {
-    return arr.findIndex(item => {
-        return (item.color == product.color);
-    })
-}
 export const countCart = arr => {
     if(arr == null || arr == []) {return 0;}
     else {return arr.map(item => item.amount).reduce((prev, next) => prev + next, 0);}

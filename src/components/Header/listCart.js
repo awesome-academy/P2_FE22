@@ -18,8 +18,10 @@ class ListCart extends Component {
     onPay = () => {
         onPay(this.props.isPayment);
     }
-    componentDidMount(){
-        
+    componentWillReceiveProps(){
+        this.setState({
+            cart: JSON.parse(localStorage.getItem('cart')) || []
+        })
     }
     render(){
         let total = 0;
