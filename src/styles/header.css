@@ -1,0 +1,36 @@
+.header-dashboard {
+    display: flex;
+    justify-content: space-between;
+    background-color: inherit;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+.header__logo {
+    max-width: 100%;
+    height: auto;
+}
+.relative {
+    position: relative;
+    align-self: center;
+}
+.header__user {
+    text-align: center;
+    color: #fff;
+    width: 50px;
+    align-self: center;
+    font-size: 30px;
+}
+.list-cart {
+    user-select: none;
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    border: 1px solid #f5bd10;
+}
+.list-cart__btn {
+    background-color: #2f4050;
+    user-select: none;
+}

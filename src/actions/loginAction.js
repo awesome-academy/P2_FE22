@@ -9,3 +9,8 @@ export const isLogout = () => {
         type: types.IS_LOGOUT
     }
 }
+export const isAdmin = () => {
+    return {
+        type: types.IS_ADMIN
+    }
+}

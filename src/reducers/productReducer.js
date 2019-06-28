@@ -1,6 +1,6 @@
 import * as types from './../constants/indexConstant';
 const initState = {
-    num: 6,
+    num: 10,
     value: undefined,
     filter: undefined,
     isGrid: true,

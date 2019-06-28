@@ -10,3 +10,4 @@ export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const IS_LOGIN = 'IS_LOGIN';
 export const IS_LOGOUT = 'IS_LOGOUT';
 export const IS_PAYMENT = 'IS_PAYMENT';
+export const IS_ADMIN = 'IS_ADMIN';
