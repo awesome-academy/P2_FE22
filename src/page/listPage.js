@@ -4,6 +4,7 @@ import BreadCrumb from './../components/breadcrumb';
 import Product from './../components/product';
 import {connect } from 'react-redux';
 import * as action from '../actions/indexAction';
+import * as loginAction from '../actions/loginAction';
 import '../styles/grid.css';
 import '../styles/list.css';
 class ListPage extends Component {
@@ -14,6 +15,9 @@ class ListPage extends Component {
     }
     componentDidMount = () => {
         window.onpopstate = this.onBackButtonEvent;
+        if(localStorage.getItem(process.env.REACT_APP_USER_LOCAL) !== null){
+            this.props.isLogin();
+        }
     }
     render(){
         const breadCrumb = ['danh mục sản phẩm'];
@@ -38,6 +42,9 @@ const mapDispatchtoProps = (dispatch, props) => {
         },
         changeStyle: (isGrid) => {
             dispatch(action.changeStyle(isGrid));
+        },
+        isLogin: () => {
+            dispatch(loginAction.isLogin())
         }
     }
 }

@@ -11,3 +11,8 @@ export const removeProduct = (product) => {
         product: product
     }
 }
+export const isPayment = () => {
+    return {
+        type: types.IS_PAYMENT
+    }
+}

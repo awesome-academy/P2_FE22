@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
 import CartNumber from './cartNumber';
-export default class HeaderNavbar extends Component{
+import UserIcon from './userIcon';
+class HeaderNavbar extends Component{
     state = {
         class: 'header__navbar__menu'
     }
@@ -17,6 +19,7 @@ export default class HeaderNavbar extends Component{
         }
     }
     render(){
+        const {isLogin} = this.props;
         return(
             <div className="header__navbar--wrapper">
                 <div className="header__navbar">
@@ -29,6 +32,9 @@ export default class HeaderNavbar extends Component{
                         <a className="header__navbar__menu-item" >tin khuyến mại</a>
                         <a className="header__navbar__menu-item" >dịch vụ</a>
                         <a className="header__navbar__menu-item" >liên hệ</a></nav>
+                        {isLogin && <a className="header__navbar--link flex-auto">
+                            <UserIcon/>
+                        </a>}
                         <a className="header__navbar--link">
                             <CartNumber/>
                         </a>
@@ -37,3 +43,9 @@ export default class HeaderNavbar extends Component{
         );
     }
 }
+const mapStatetoProps = (state) => {
+    return {
+        isLogin: state.loginReducer.isLogin
+    }
+}
+export default connect(mapStatetoProps, null)(HeaderNavbar)

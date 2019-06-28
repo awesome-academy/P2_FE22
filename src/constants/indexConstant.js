@@ -7,3 +7,6 @@ export const IS_SELECT_PRODUCT = 'IS_SELECT_PRODUCT';
 export const CHANGE_TAB = 'CHANGE_TAB';
 export const BUY_PRODUCT = 'BUY_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+export const IS_LOGIN = 'IS_LOGIN';
+export const IS_LOGOUT = 'IS_LOGOUT';
+export const IS_PAYMENT = 'IS_PAYMENT';
