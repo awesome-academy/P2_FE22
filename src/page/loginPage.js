@@ -40,8 +40,14 @@ class LoginPage extends Component {
                     this.props.isLogin();
                     checkLocalStorage(res.data[index].id,
                                         res.data[index].cart,
+                                        res.data[index].order,
                                         this.props.buyProduct)
-                    this.props.history.push('/product')
+                    if(res.data[index].rule == 'user'){
+                        this.props.history.push('/product')
+                    }else{
+                        this.props.history.push('/dashboard')
+                    }
+                    
                 }else {
                     alert('Sai tài khoản hoặc mật khẩu !!!')
                 }
