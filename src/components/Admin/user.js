@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction';
 import callAPI from '../../utils/apiCaller';
+import ProductItem from './productItem';
 import {formatPrice} from '../../utils/formatPrice';
 import Show from './show';
 import Tablecell from './tablecell';
-import {sortArray, filterArray} from '../../utils/filter';
+import {sortUser, filterArray} from '../../utils/filter';
 import '../../styles/table.css'
-class Table extends Component {
+class User extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -26,7 +27,7 @@ class Table extends Component {
         console.log(product)
     }
     deleteProduct = (id) => {
-        callAPI(`product/${id}/`, 'DELETE', null)
+        callAPI(`${this.props.endpoint}/${id}/`, 'DELETE', null)
             .then(
                 alert('Sản phẩm đã được xóa !')
             )
@@ -42,42 +43,43 @@ class Table extends Component {
     render(){
         const {num, value, filter} = this.props;
         const {arr, asc} = this.state;
-        const sorted = sortArray(filterArray(arr, filter), value, asc)
+        const sorted = sortUser(filterArray(arr, filter), value, asc)
         return(
             <div>
                 <Show event={this.props.showProduct}/>
-                <table className='table-product'>
+                <table className='table-product font-13'>
                     <thead className='table-head'>
                         <tr className="table-row">
-                            <th className="w-70">STT</th>
-                            <th className="w-70">sản phẩm</th>
-                            <Tablecell orderProduct={this.orderProduct}
-                                type='title'>
+                            <th className="w-40">STT</th>
+                            <Tablecell className="w-110"
+                                orderProduct={this.orderProduct}
+                                type='Name'>
                                 tên
                             </Tablecell>
-                            <Tablecell orderProduct={this.orderProduct}
-                                type='type'>
-                                loại
+                            <Tablecell className="w-110" 
+                                orderProduct={this.orderProduct}
+                                type='Email'>
+                                email
                             </Tablecell>
                             <Tablecell className="w-110"
                                 orderProduct={this.orderProduct}
-                                type='price'>
-                                giá
+                                type='Phone'>
+                                phone
+                            </Tablecell>
+                            <Tablecell className="w-110"
+                                orderProduct={this.orderProduct}
+                                type='Address'>
+                                address
+                            </Tablecell>
+                            <Tablecell
+                                orderProduct={this.orderProduct}
+                                type='order'>
+                                order
                             </Tablecell>
                             <Tablecell className="w-70"
                                 orderProduct={this.orderProduct}
-                                type='stars'>
-                                đánh giá
-                            </Tablecell>
-                            <Tablecell className="w-70"
-                                orderProduct={this.orderProduct}
-                                type='rates'>
-                                bình luận
-                            </Tablecell>
-                            <Tablecell className="w-70"
-                                orderProduct={this.orderProduct}
-                                type='status'>
-                                tình trạng
+                                type='rule'>
+                                Rule
                             </Tablecell>
                             <th className="w-70"></th>
                         </tr>
@@ -87,21 +89,26 @@ class Table extends Component {
                             return(
                                 <tr key={index} className="table-row">
                                     <td>{index + 1}</td>
+                                    <td className="align-left">{item.Name}</td>
+                                    <td className="align-left word-break">{item.Email}</td>
+                                    <td className='align-left'>{item.Phone}</td>
+                                    <td>{item.Address}</td>
                                     <td>
-                                        <img
-                                        className='image-product'
-                                        src={process.env.PUBLIC_URL + item.img}/>
+                                        {item.order !== [] && item.order.map((item, i) => {
+                                                return item.orderItem.map((item, i) => {
+                                                    return(
+                                                        <ProductItem
+                                                            key={i}
+                                                            src={item.img}
+                                                            name={item.title}
+                                                            price={formatPrice(item.price)}
+                                                            amount={item.amount}/>
+                                                    );
+                                                })
+                                            })}
                                     </td>
-                                    <td className="align-left">{item.title}</td>
-                                    <td className="align-left">{item.type}</td>
-                                    <td className='table-price align-left'>
-                                        {formatPrice(item.price)}
-                                        <span> Đ</span>
-                                    </td>
-                                    <td>{item.stars}</td>
-                                    <td>{item.rates}</td>
                                     <td>
-                                        {item.status ? <p className='table-btn success'>còn hàng</p> : <p className='table-btn danger'>hết hàng</p>}
+                                        {item.rule === 'user' ? <p className='table-btn success'>user</p> : <p className='table-btn danger'>admin </p>}
                                     </td>
                                     <td>
                                         <p className="table-btn success mr-5"
@@ -116,7 +123,7 @@ class Table extends Component {
                                 </tr>)
                         })}
                     </tbody>
-            </table>
+                </table>
             </div>
         );
     }
@@ -138,4 +145,4 @@ const mapDispatchtoProps = (dispatch, props) => {
         }
     }
 }
-export default connect(mapStatetoProps, mapDispatchtoProps)(Table)
+export default connect(mapStatetoProps, mapDispatchtoProps)(User)

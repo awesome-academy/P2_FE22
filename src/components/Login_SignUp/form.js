@@ -12,7 +12,6 @@ class Form extends Component {
     }
     onSubmit = (e) => {
         this.props.onSubmit(e);
-        //e.preventDefault();
     }
     render(){
         const {id, title, input, isCheck, Check, isPass, btn} = this.props.value;

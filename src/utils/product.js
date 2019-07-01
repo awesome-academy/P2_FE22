@@ -14,15 +14,15 @@ export const addProduct = (arr,product) => {
   }
 export const selectProduct = (id) => {
     let recent = [];
-    if(localStorage.getItem('recent') == null){
+    if(localStorage.getItem('recent') == null || localStorage.getItem('recent') == []){
         recent.push(id)
-        localStorage.setItem('recent', JSON.stringify(recent))
+        localStorage.setItem('recent', recent)
         return recent;
     }else {
-        recent = JSON.parse(localStorage.getItem('recent'));
+        recent = localStorage.getItem('recent').split(",").map(Number);
         recent.push(id)
         recent = recent.splice(-3, 3);
-        localStorage.setItem('recent', JSON.stringify(recent));
+        localStorage.setItem('recent', recent);
         return recent;
     }
 }

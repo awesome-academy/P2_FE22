@@ -21,21 +21,21 @@ class Aside extends Component {
         return(
             <aside className="sidebar">
                 <div className="sidebar__item">
-                    <i class="fa fa-home sidebar__icon"></i>
+                    <i className="fa fa-home sidebar__icon"></i>
                     <Link to="/dashboard">Home</Link>
                 </div>
                 <div className="sidebar__item">
-                    <i class="fa fa-folder sidebar__icon" onClick={this.showCate}></i>
+                    <i className="fa fa-folder sidebar__icon" onClick={this.showCate}></i>
                     <Link to='/dashboard/product' onClick={this.showCate}>Product</Link>
-                    <i class="fa fa-angle-down sidebar__arrow"></i>
+                    <i className="fa fa-angle-down sidebar__arrow"></i>
                         {!isHide && this.props.children}
                 </div>
                 <div className="sidebar__item">
-                    <i class="fa fa-users sidebar__icon"></i>
+                    <i className="fa fa-users sidebar__icon"></i>
                     <Link to="/dashboard/user">User</Link>
                     </div>
                 <div className="sidebar__item">
-                    <i class="fa fa-shopping-cart sidebar__icon"></i>
+                    <i className="fa fa-shopping-cart sidebar__icon"></i>
                     <Link to="/dashboard/order">Order</Link>
                     </div>
             </aside>

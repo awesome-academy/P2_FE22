@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as loginAction from '../../actions/loginAction';
 import '../../styles/header.css'
 class Header extends Component {
     constructor(props){
@@ -14,14 +16,16 @@ class Header extends Component {
         })
     }
     signOut = () => {
-
+        this.props.isLogout();
+        window.location.href = '/';
     }
     render(){
         const {isHide} = this.state;
         return(
             <header className="header-dashboard">
                 <img className="header__logo"
-                     src={process.env.PUBLIC_URL + '/imgs/logo.png'}/>
+                     src={process.env.PUBLIC_URL + '/imgs/logo.png'}
+                     alt="#"/>
                     <div className="relative">
                         <i className="header__user fa fa-user-circle"
                             onClick={this.onClick}></i>
@@ -36,4 +40,11 @@ class Header extends Component {
         )
     }
 }
-export default Header;
+const mapDispatchtoProps = (dispatch, props) => {
+    return {
+        isLogout: () => {
+            dispatch(loginAction.isLogout())
+        }
+    }
+}
+export default connect(null, mapDispatchtoProps)(Header);

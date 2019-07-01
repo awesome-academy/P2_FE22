@@ -9,10 +9,11 @@ export default (state = initState, action) => {
             state = {...state, isLogin: true}
             return state;
         case types.IS_LOGOUT:
-            state = {...state, isLogin: false}
-            console.log(state)
+            state = {...state, isLogin: false, isAdmin: false}
+            return state;
         case types.IS_ADMIN:
             state = {...state, isAdmin: true}
+            return state;
         default:
             return state;
     }
