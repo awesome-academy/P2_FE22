@@ -20,6 +20,7 @@ class UserIcon extends Component {
     signOut = () => {
         signOut();
         this.props.isLogout();
+        this.props.isAdmin();
         this.props.isPayment();
         this.setState({
             isHide: !this.state.isHide
@@ -58,6 +59,9 @@ const mapDispatchtoProps = (dispatch, props) => {
     return {
         isLogout: () => {
             dispatch(loginAction.isLogout())
+        },
+        isAdmin: () => {
+            dispatch(loginAction.isAdmin())
         },
         isPayment: () => {
             dispatch(cartAction.isPayment())

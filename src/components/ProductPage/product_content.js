@@ -3,6 +3,7 @@ import ProductCard from './product_card';
 import ProductCardWidth from './product_card_width';
 import {connect} from 'react-redux';
 import getProductAPI from './../../utils/apiCaller';
+import {sortByAlphabet, sortArray, filterArray} from '../../utils/filter';
 class ProductContent extends Component{
     constructor(props){
         super(props);
@@ -29,43 +30,10 @@ class ProductContent extends Component{
             })
         }
     }
-    sortByAlphabet = (arr = []) => {
-        return arr.sort((prev, next) => {
-            let prevTitle = prev.title.toLowerCase();
-            let nextTitle = next.title.toLowerCase();
-            return (prevTitle < nextTitle) ? -1 : 1;
-        })
-    }
-    sortArray = (arr = [], key = undefined) => {
-        if(key == 'title'){
-            this.sortByAlphabet(arr);
-        }
-        return arr.sort((prev, next) => {
-          return prev[key] - next[key];
-        })
-    }
-    filterArray = (arr = [], object = undefined) => {
-        if( object === undefined){
-            return arr;
-        }
-        if( object.type === 'price'){
-            return arr.filter((item) => {
-                return object.item[0] <= item[object.type] && item[object.type] <= object.item[1];
-            })
-        }
-        if( object.type === 'color'){
-            return arr.filter((item) => {
-                return(item[object.type].indexOf(object.item) !== -1)
-            })
-        }
-        return arr.filter((item) => {
-            return item[object.type] === object.item;
-        })
-    }
     render(){
         const {num, value, filter, isGrid,classN} = this.props;
         const {arr} = this.state;
-        const sorted = this.sortArray(this.filterArray(arr, filter), value)
+        const sorted = sortArray(filterArray(arr, filter), value)
         return(
             <div className={`${classN}__content`}
                  id="product-grid__content">

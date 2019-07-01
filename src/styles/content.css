@@ -1,0 +1,9 @@
+.content {
+    width: calc(100% - 250px);
+    position: absolute;
+    left: 250px;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 14px;
+    background: #fff;
+}

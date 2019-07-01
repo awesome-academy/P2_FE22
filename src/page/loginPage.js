@@ -37,14 +37,15 @@ class LoginPage extends Component {
             .then(res => {
                 let index = isExist(res.data, Email, Password);
                 if(index !== -1){
-                    this.props.isLogin();
-                    checkLocalStorage(res.data[index].id,
-                                        res.data[index].cart,
-                                        res.data[index].order,
-                                        this.props.buyProduct)
                     if(res.data[index].rule == 'user'){
+                        this.props.isLogin();
+                        checkLocalStorage(res.data[index].id,
+                                            res.data[index].cart,
+                                            res.data[index].order,
+                                            this.props.buyProduct)
                         this.props.history.push('/product')
                     }else{
+                        this.props.isAdmin()
                         this.props.history.push('/dashboard')
                     }
                     
@@ -75,6 +76,9 @@ const mapDispatchtoProps = (dispatch, props) => {
     return {
         isLogin: () => {
             dispatch(loginAction.isLogin())
+        },
+        isAdmin: () => {
+            dispatch(loginAction.isAdmin())
         },
         buyProduct: (product) => {
             dispatch(cartAction.buyProduct(product))
