@@ -13,6 +13,9 @@ export const sortArray = (arr = [], key = undefined, asc = true) => {
     if(key === 'type'){
         sortByAlphabet(arr, 'type', asc);
     }
+    if(key === 'color'){
+        sortByAlphabet(arr, 'color', asc);
+    }
     if(asc){
         return arr.sort((prev, next) => {
             return prev[key] - next[key];

@@ -40,10 +40,10 @@ class UserIcon extends Component {
                     onClick={this.onClick}></i>
                 {!isHide && <ul className='list-cart'>
                     <li className="list-cart__item">
-                        <a className='list-cart__btn'>Edit Profile</a>
+                        <Link to="/profile" className='list-cart__btn'>Profile</Link>
                     </li>
                     <li className="list-cart__item">
-                        <Link className='list-cart__btn'
+                        <Link to="/login" className='list-cart__btn'
                             onClick={this.signOut}>Đăng xuất</Link>
                     </li>
                     <li className="list-cart__item">

@@ -29,35 +29,6 @@
       ]
     },
     {
-      "id": 1112,
-      "img": "/imgs/high--product/new--product-1.png",
-      "price": 1900000,
-      "title": "máy in phun cỡ lớn",
-      "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat occaecat cupidatat non proident modi tempora incidunt...",
-      "type": "náy in phun cỡ lớn",
-      "color": [
-        "màu vàng",
-        "màu đỏ",
-        "màu đen"
-      ],
-      "stars": 4,
-      "rates": 18,
-      "status": true,
-      "info": [
-        "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus",
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
-        "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
-        "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt."
-      ],
-      "detailsImg": [
-        "/imgs/detail/detail--product-1.png",
-        "/imgs/detail/detail--product-2.png",
-        "/imgs/detail/detail--product-3.png",
-        "/imgs/detail/detail--product-4.png",
-        "/imgs/detail/detail--product-5.png"
-      ]
-    },
-    {
       "id": 1113,
       "img": "/imgs/high--product/cart--product-1.png",
       "price": 150000,
@@ -1036,11 +1007,11 @@
   ],
   "user": [
     {
-      "Name": "ss",
-      "Email": "ss",
-      "Phone": "ss",
-      "Address": "ss",
-      "Password": "3691308f2a4c2f6983f2880d32e29c84",
+      "Name": "tran van ku do",
+      "Email": "ssasd",
+      "Phone": "ssad",
+      "Address": "da nang",
+      "Password": "202cb962ac59075b964b07152d234b70",
       "id": "trRr-DsKr",
       "rule": "user",
       "cart": [],
@@ -1401,6 +1372,94 @@
         }
       ],
       "order": []
+    },
+    {
+      "Name": "kudo",
+      "Email": "kudo@gmail.com",
+      "Phone": "8194917132",
+      "Address": "hai chau, da nang",
+      "Password": "202cb962ac59075b964b07152d234b70",
+      "id": "Z7NykQ1tC",
+      "rule": "user",
+      "cart": [],
+      "order": [
+        {
+          "day": "6-1",
+          "time": "14-56",
+          "orderItem": [
+            {
+              "id": 11110,
+              "color": "màu vàng",
+              "amount": 1,
+              "price": 2250500,
+              "title": "máy khoan BLACK DECKER",
+              "img": "/imgs/high--product/high--product-4.png"
+            },
+            {
+              "id": 11150,
+              "color": "màu xanh",
+              "amount": 1,
+              "price": 2250500,
+              "title": "máy khoan BLACK DECKER",
+              "img": "/imgs/high--product/high--product-3.png"
+            },
+            {
+              "id": 1113,
+              "color": "màu xanh",
+              "amount": 1,
+              "price": 150000,
+              "title": "dy khoan BLACK DECKER",
+              "img": "/imgs/high--product/cart--product-1.png"
+            },
+            {
+              "id": 111170,
+              "color": "màu bạc",
+              "amount": 1,
+              "price": 2250500,
+              "title": "máy khoan BLACK DECKER",
+              "img": "/imgs/high--product/new--product-3.png"
+            },
+            {
+              "id": 11130,
+              "color": "màu đen",
+              "amount": 1,
+              "price": 1150150,
+              "title": "máy khoan BLACK DECKER",
+              "img": "/imgs/high--product/high--product-3.png"
+            }
+          ]
+        },
+        {
+          "day": "6-1",
+          "time": "14-58",
+          "orderItem": [
+            {
+              "id": 1111,
+              "color": "màu xanh",
+              "amount": 1,
+              "price": 1150150,
+              "title": "máy phay đa năng CNC",
+              "img": "/imgs/high--product/cart--product-1.png"
+            },
+            {
+              "id": 1113,
+              "color": "màu xanh",
+              "amount": 1,
+              "price": 150000,
+              "title": "dy khoan BLACK DECKER",
+              "img": "/imgs/high--product/cart--product-1.png"
+            },
+            {
+              "id": 1114,
+              "color": "màu xanh",
+              "amount": 1,
+              "price": 150000,
+              "title": "máy khoan BLACK DECKER",
+              "img": "/imgs/high--product/new--product-3.png"
+            }
+          ]
+        }
+      ]
     }
   ],
   "order": [
@@ -1880,6 +1939,88 @@
       "price": 2545150,
       "day": "6-1",
       "time": "8-3"
+    },
+    {
+      "id": "kRkBUlzoy",
+      "idUser": "Z7NykQ1tC",
+      "order": [
+        {
+          "id": 11110,
+          "color": "màu vàng",
+          "amount": 1,
+          "price": 2250500,
+          "title": "máy khoan BLACK DECKER",
+          "img": "/imgs/high--product/high--product-4.png"
+        },
+        {
+          "id": 11150,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 2250500,
+          "title": "máy khoan BLACK DECKER",
+          "img": "/imgs/high--product/high--product-3.png"
+        },
+        {
+          "id": 1113,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 150000,
+          "title": "dy khoan BLACK DECKER",
+          "img": "/imgs/high--product/cart--product-1.png"
+        },
+        {
+          "id": 111170,
+          "color": "màu bạc",
+          "amount": 1,
+          "price": 2250500,
+          "title": "máy khoan BLACK DECKER",
+          "img": "/imgs/high--product/new--product-3.png"
+        },
+        {
+          "id": 11130,
+          "color": "màu đen",
+          "amount": 1,
+          "price": 1150150,
+          "title": "máy khoan BLACK DECKER",
+          "img": "/imgs/high--product/high--product-3.png"
+        }
+      ],
+      "price": 8051650,
+      "day": "6-1",
+      "time": "14-56"
+    },
+    {
+      "id": "jYG_i4hsd",
+      "idUser": "Z7NykQ1tC",
+      "order": [
+        {
+          "id": 1111,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 1150150,
+          "title": "máy phay đa năng CNC",
+          "img": "/imgs/high--product/cart--product-1.png"
+        },
+        {
+          "id": 1113,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 150000,
+          "title": "dy khoan BLACK DECKER",
+          "img": "/imgs/high--product/cart--product-1.png"
+        },
+        {
+          "id": 1114,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 150000,
+          "title": "máy khoan BLACK DECKER",
+          "img": "/imgs/high--product/new--product-3.png"
+        }
+      ],
+      "price": 1450150,
+      "day": "6-1",
+      "time": "14-58"
     }
   ],
   "cart": []

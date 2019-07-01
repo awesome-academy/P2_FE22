@@ -17,7 +17,7 @@ export default class HeaderNavigation extends Component{
                     <div className="login__btn">
                         <Link to='/signup' title="Đăng kí">đăng kí</Link></div>
                     <div className="login__btn">
-                        <Link to='login' title="Đăng nhập">đăng nhập</Link></div>
+                        <Link to='/login' title="Đăng nhập">đăng nhập</Link></div>
                 </div>
             </div>
           </div>

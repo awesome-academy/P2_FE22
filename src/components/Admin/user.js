@@ -43,7 +43,7 @@ class User extends Component {
     render(){
         const {num, value, filter} = this.props;
         const {arr, asc} = this.state;
-        const sorted = sortUser(filterArray(arr, filter), value, asc)
+        const sorted = sortUser(arr, value, asc)
         return(
             <div>
                 <Show event={this.props.showProduct}/>

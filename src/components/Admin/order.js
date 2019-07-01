@@ -43,7 +43,7 @@ class Order extends Component {
     render(){
         const {num, value, filter} = this.props;
         const {arr, asc} = this.state;
-        const sorted = sortOrder(filterArray(arr, filter), value, asc)
+        const sorted = sortOrder(arr, value, asc)
         return(
             <div>
                 <Show event={this.props.showProduct}/>
