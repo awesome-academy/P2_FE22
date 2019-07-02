@@ -8,6 +8,7 @@ import LoginPage from './page/loginPage';
 import SignUpPage from './page/signUpPage';
 import Detail from './page/detail';
 import Dashboard from './page/dashboard';
+import Profile from './page/profile';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
                     <Route exact path='/' component={ListPage}/>
                     <Route exact path='/login' component={LoginPage}/>
                     <Route exact path='/signup' component={SignUpPage}/>
+                    <Route exact path='/profile' component={Profile}/>
                 </div>}
                 <Aside />
                 <Route exact path='/dashboard' component={Dashboard}/>
