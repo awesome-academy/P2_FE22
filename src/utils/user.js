@@ -17,7 +17,7 @@ export const onOrder = (idUser) => {
 export const isExist = (arr, email, password) => {
     return arr.findIndex(item => {
         return (
-            item.Email == email && item.Password == password
+            item.Email === email && item.Password === password
             );
     })
 }
@@ -32,7 +32,7 @@ export const signOut = () => {
 export const onPay = (func) => {
     const id = localStorage.getItem(process.env.REACT_APP_USER_LOCAL);
     const order = JSON.parse(localStorage.getItem(process.env.REACT_APP_ORDER_LOCAL))
-    if(id == null || id == []){
+    if(id === null || id === []){
         alert("Bạn phải đăng nhập trước khi thanh toán !")
         window.location.href = '/login'
     }else {
@@ -54,7 +54,7 @@ export const checkLocalStorage = (id, value, order, func) => {
     let cart = localStorage.getItem('cart');
     localStorage.setItem(process.env.REACT_APP_USER_LOCAL, id)
     localStorage.setItem(process.env.REACT_APP_ORDER_LOCAL,JSON.stringify(order))
-    if(cart == null || cart == []){
+    if(cart === null || cart === []){
         localStorage.setItem('cart', JSON.stringify(value))
         localStorage.setItem(id, JSON.stringify(value))
         func([value]);

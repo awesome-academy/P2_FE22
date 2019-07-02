@@ -41,14 +41,33 @@ tr, th, td {
     border-radius: 5px;
 
 }
+.font-13 {
+    font-size: 13px;
+}
+.word-break {
+    word-break: break-all;
+}
 .mr-5 {
     margin-right: 5px;
+}
+.w-40 {
+    width: 40px;
 }
 .w-70 {
     width: 70px;
 }
 .w-110 {
     width: 110px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-2 {
+    flex: 2;
 }
 .asc {
     color: #ced4da;

@@ -1,0 +1,17 @@
+.show {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
+}
+.show-title {
+    color: #363636;
+    display: inline;
+    margin-right: 10px;
+}
+.show-select {
+    font-size: 1.4rem;
+    color: #898989;
+    border-color: #cccccc;
+    height: 34px;
+    width: 165px;
+}

@@ -3,19 +3,10 @@ import { Link } from 'react-router-dom';
 import {connect } from 'react-redux';
 import * as action from '../../actions/indexAction';
 import {formatPrice} from '../../utils/formatPrice';
+import {selectProduct} from '../../utils/product';
 class AsideImage extends Component{
     selectProduct = (id) => {
-		let recent = [];
-        if(localStorage.getItem('recent') == null){
-            recent.push(id)
-            localStorage.setItem('recent', recent)
-		}else {
-			recent = localStorage.getItem('recent').split(",").map(Number);
-            recent.push(id)
-            recent = recent.splice(-3, 3);
-            localStorage.setItem('recent', recent);
-        }
-		this.props.selectProduct(recent);
+		this.props.selectProduct(selectProduct(id));
 	}
     render(){
         const {aside, style} = this.props;

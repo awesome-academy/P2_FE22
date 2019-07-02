@@ -7,11 +7,55 @@ export const sortByAlphabet = (arr = [], key, asc = true) => {
     return asc ? sorted : sorted.reverse()
 }
 export const sortArray = (arr = [], key = undefined, asc = true) => {
-    if(key == 'title'){
+    if(key === 'title'){
         sortByAlphabet(arr, 'title', asc);
     }
-    if(key == 'type'){
+    if(key === 'type'){
         sortByAlphabet(arr, 'type', asc);
+    }
+    if(asc){
+        return arr.sort((prev, next) => {
+            return prev[key] - next[key];
+        })
+    }
+    return arr.sort((prev, next) => {
+        return next[key] - prev[key];
+    })
+}
+export const sortOrder = (arr = [], key = undefined, asc = true) => {
+    if(key === 'id'){
+        sortByAlphabet(arr, 'id', asc);
+    }
+    if(key === 'day'){
+        sortByAlphabet(arr, 'day', asc);
+    }
+    if(key === 'time'){
+        sortByAlphabet(arr, 'time', asc);
+    }
+    if(asc){
+        return arr.sort((prev, next) => {
+            return prev[key] - next[key];
+        })
+    }
+    return arr.sort((prev, next) => {
+        return next[key] - prev[key];
+    })
+}
+export const sortUser = (arr = [], key = undefined, asc = true) => {
+    if(key === 'Name'){
+        sortByAlphabet(arr, 'Name', asc);
+    }
+    if(key === 'Email'){
+        sortByAlphabet(arr, 'Email', asc);
+    }
+    if(key === 'Phone'){
+        sortByAlphabet(arr, 'Phone', asc);
+    }
+    if(key === 'Address'){
+        sortByAlphabet(arr, 'Address', asc);
+    }
+    if(key === 'rule'){
+        sortByAlphabet(arr, 'rule', asc);
     }
     if(asc){
         return arr.sort((prev, next) => {

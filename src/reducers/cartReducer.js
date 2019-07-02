@@ -16,6 +16,7 @@ export default (state = initCart, action) => {
         case types.REMOVE_PRODUCT:
             state = {...state,
                     cart: [...action.product]}
+            return state;
         case types.IS_PAYMENT:
             state = {...state,
                     cart: []}

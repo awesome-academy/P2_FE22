@@ -9,8 +9,9 @@
     z-index: 10;
 }
 .header__logo {
-    max-width: 100%;
-    height: auto;
+    margin-left: 10px;
+    width: 75px;
+    height: 50px;
 }
 .relative {
     position: relative;

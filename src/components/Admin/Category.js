@@ -29,6 +29,10 @@ class Category extends Component {
         const {listCate} = this.state;
         return(
             <ul className="category">
+                <li className="category__item"
+                            onClick={this.onType.bind(this, undefined)}>
+                            tất cả
+                        </li>
                 {listCate.map((item, index) => {
                     return(
                         <li className="category__item"

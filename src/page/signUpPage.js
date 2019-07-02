@@ -8,11 +8,8 @@ import callAPI from '../utils/apiCaller';
 import shortid from 'shortid';
 import '../styles/signup.css';
 class SignUpPage extends Component {
-    constructor(props){
-        super(props);
-    }
     onEnter = (e) => {
-        if(e.key === 'Enter' || e.key == 'Tab'){
+        if(e.key === 'Enter' || e.key === 'Tab'){
             if(e.target.name === 'Password'){
                 this.setState({[e.target.name] : md5(e.target.value)})
             }else {

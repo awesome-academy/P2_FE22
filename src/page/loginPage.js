@@ -12,11 +12,8 @@ import callAPI from '../utils/apiCaller';
 import {isExist, checkLocalStorage} from '../utils/user';
 import '../styles/login.css';
 class LoginPage extends Component {
-    constructor(props){
-        super(props);
-    }
     onEnter = (e) => {
-        if(e.key === 'Enter' || e.key == 'Tab'){
+        if(e.key === 'Enter' || e.key === 'Tab'){
             if(e.target.name === 'Password'){
                 this.setState({[e.target.name] : md5(e.target.value)})
             }else {
@@ -37,7 +34,7 @@ class LoginPage extends Component {
             .then(res => {
                 let index = isExist(res.data, Email, Password);
                 if(index !== -1){
-                    if(res.data[index].rule == 'user'){
+                    if(res.data[index].rule === 'user'){
                         this.props.isLogin();
                         checkLocalStorage(res.data[index].id,
                                             res.data[index].cart,
