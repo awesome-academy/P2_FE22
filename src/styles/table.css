@@ -44,11 +44,17 @@ tr, th, td {
 .font-13 {
     font-size: 13px;
 }
+.font-14 {
+    font-size: 14px;
+}
 .word-break {
     word-break: break-all;
 }
 .mr-5 {
     margin-right: 5px;
+}
+.mb-100 {
+    margin-bottom: 100px;
 }
 .w-40 {
     width: 40px;
