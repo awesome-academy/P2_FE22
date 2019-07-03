@@ -1,6 +1,14 @@
 import * as types from './../constants/indexConstant';
 const initState = {
+    product: [],
     num: 10,
+    productDetail: {
+        title:"",
+        detailsImg: [],
+        color: [],
+        info: [],
+        img: ""
+    },
     value: undefined,
     filter: undefined,
     isGrid: true,
@@ -9,6 +17,12 @@ const initState = {
 };
 export default (state = initState, action) => {
     switch (action.type) {
+        case types.GET_PRODUCT:
+            state = {...state, product: action.product}
+            return state;
+        case types.SHOW_DETAIL:
+            state = {...state, productDetail: action.productDetail}
+            return state;
         case types.SHOW_PRODUCT:
             state = {...state, num: action.num}
             return state;
