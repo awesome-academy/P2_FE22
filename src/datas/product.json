@@ -1144,7 +1144,24 @@
       "Password": "21232f297a57a5a743894a0e4a801fc3",
       "id": "thpzWv7Xk",
       "rule": "user",
-      "cart": [],
+      "cart": [
+        {
+          "id": 1117,
+          "color": "màu xanh",
+          "amount": 1,
+          "price": 400000,
+          "title": "DECKER",
+          "img": "/imgs/high--product/cart--product-2.png"
+        },
+        {
+          "id": 1117,
+          "color": "màu vàng",
+          "amount": 1,
+          "price": 400000,
+          "title": "DECKER",
+          "img": "/imgs/high--product/cart--product-2.png"
+        }
+      ],
       "order": [
         {
           "day": "6-1",

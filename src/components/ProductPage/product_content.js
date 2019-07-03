@@ -2,22 +2,17 @@ import React, {Component} from 'react';
 import ProductCard from './product_card';
 import ProductCardWidth from './product_card_width';
 import {connect} from 'react-redux';
-import getProductAPI from './../../utils/apiCaller';
-import {sortByAlphabet, sortArray, filterArray} from '../../utils/filter';
+import * as action from '../../actions/indexAction';
+import {sortArray, filterArray} from '../../utils/filter';
 class ProductContent extends Component{
     constructor(props){
         super(props);
         this.state = {
-            arr: [],
             classN: "product-grid__content"
         }
     }
     componentDidMount(){
-       getProductAPI('product','GET', null).then(res => {
-           this.setState({
-               arr: res.data
-           })
-       })
+        this.props.fetchAPI();
     }
     componentWillReceiveProps(){
         if(this.props.isGrid){
@@ -31,9 +26,8 @@ class ProductContent extends Component{
         }
     }
     render(){
-        const {num, value, filter, isGrid,classN} = this.props;
-        const {arr} = this.state;
-        const sorted = sortArray(filterArray(arr, filter), value)
+        const {num, value, filter, isGrid,classN, product} = this.props;
+        const sorted = sortArray(filterArray(product, filter), value)
         return(
             <div className={`${classN}__content`}
                  id="product-grid__content">
@@ -50,10 +44,18 @@ class ProductContent extends Component{
 }
 const mapStatetoProps = (state) => {
     return {
+        product: state.productReducer.product,
         num : state.productReducer.num,
         value: state.productReducer.value,
         filter: state.productReducer.filter,
         isGrid: state.productReducer.isGrid
     }
 }
-export default connect(mapStatetoProps,null)(ProductContent)
+const mapDispatchtoProps = (dispatch, props) => {
+    return {
+        fetchAPI: () => {
+            dispatch(action.fetchAPI());
+        }
+    }
+}
+export default connect(mapStatetoProps, mapDispatchtoProps)(ProductContent)

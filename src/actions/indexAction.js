@@ -1,4 +1,33 @@
 import * as types from './../constants/indexConstant';
+import callAPI from './../utils/apiCaller';
+export const fetchAPI = () => {
+    return (dispatch) => {
+        return callAPI('product', 'GET', null)
+            .then(res => {
+                dispatch(getProduct(res.data))
+            })
+    }
+}
+export const getProduct = (product) => {
+    return {
+        type: types.GET_PRODUCT,
+        product: product
+    }
+}
+export const showDetailProductAPI = (id) => {
+    return (dispatch) => {
+        return callAPI(`product?id=${id}`, 'GET', null)
+            .then(res => {
+                dispatch(showDetailProduct(res.data[0]))
+            })
+    }
+}
+export const showDetailProduct = (productDetail) => {
+    return {
+        type: types.SHOW_DETAIL,
+        productDetail: productDetail
+    }
+}
 export const showProduct = (num) => {
     return {
         type: types.SHOW_PRODUCT,
