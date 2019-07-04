@@ -11,34 +11,22 @@ class Detail extends Component {
     constructor(props){
         super(props);
         this.state = {
-            product: {
-                title:"",
-                detailsImg: [],
-                color: [],
-                info: [],
-                img: ""
-            },
             idProduct: this.props.match.params.id
         }
     }
     componentDidMount(){
-        const endpoint = `product/?id=${this.state.idProduct}`;
-        getProductAPI(endpoint,'GET', null).then(res => {
-            this.setState({
-                product: res.data[0]
-            })
-        })
+        this.props.getProductDetailRequest(this.state.idProduct);
     }
     render(){
-        const {product} = this.state;
-        const breadCrumb = ['danh sách sản phẩm', product.title];
+        const {productDetail} =this.props;
+        const breadCrumb = ['danh sách sản phẩm', productDetail.title];
         return(
             <div>
             <div className="section-detail">
                 <BreadCrumb breadCrumb={breadCrumb}/>
                 <div className="section__content">
                     <AsideList />
-                    <Details product={product}/>
+                    <Details product={productDetail}/>
                 </div>
             </div>
             <Footer />
@@ -48,11 +36,15 @@ class Detail extends Component {
 }
 const mapStatetoProps = (state) => {
     return {
+        productDetail: state.productReducer.productDetail,
         idProduct: state.productReducer.idProduct
     }
 }
 const mapDispatchtoProps = (dispatch, props) => {
     return {
+        getProductDetailRequest: (id) => {
+            dispatch(action.getProductDetailRequest(id))
+        },
         selectProduct: (idProduct) => {
             dispatch(action.selectProduct(idProduct))
         }
