@@ -1,5 +1,13 @@
 import * as types from './../constants/indexConstant';
 const initState = {
+    product: [],
+    productDetail: {
+        title:"",
+        detailsImg: [],
+        color: [],
+        info: [],
+        img: ""
+    },
     num: 10,
     value: undefined,
     filter: undefined,
@@ -9,6 +17,12 @@ const initState = {
 };
 export default (state = initState, action) => {
     switch (action.type) {
+        case types.FETCH_API:
+            state = {...state, product: action.product}
+            return state;
+        case types.PRODUCT_DETAILS:
+            state = {...state, productDetail: action.productDetail}
+            return state
         case types.SHOW_PRODUCT:
             state = {...state, num: action.num}
             return state;
