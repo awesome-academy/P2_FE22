@@ -1,39 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction'
-import callAPI from '../../utils/apiCaller';
 class Category extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            listCate: []
-        }
-    }
     onType = (e) => {
         this.props.filterProduct(e);
     }
     componentDidMount(){
-        callAPI('product', 'GET', null)
-            .then(res => {
-                let type = [];
-                for(let item of res.data){
-                    type.push(item.type)
-                }
-                type = [...new Set([...type])]
-                this.setState({
-                    listCate: type
-                })
-            })
+        if(this.props.typeProduct.length === 0){
+            this.props.getTypeProductRequest();
+        }
     }
     render(){
-        const {listCate} = this.state;
+        const {typeProduct} = this.props;
         return(
             <ul className="category">
                 <li className="category__item"
                             onClick={this.onType.bind(this, undefined)}>
                             tất cả
                         </li>
-                {listCate.map((item, index) => {
+                {typeProduct.map((item, index) => {
                     return(
                         <li className="category__item"
                             key={index}
@@ -46,11 +31,19 @@ class Category extends Component {
         );
     }
 }
+const mapStatetoProps = (state) => {
+    return {
+        typeProduct: state.productReducer.typeProduct
+    }
+}
 const mapDispatchtoProps = (dispatch, props) => {
     return {
+        getTypeProductRequest: () => {
+            dispatch(action.getTypeProductRequest())
+        },
         filterProduct: (filter) => {
             dispatch(action.filterProduct(filter))
         }  
     }
 }
-export default connect(null, mapDispatchtoProps)(Category);
+export default connect(mapStatetoProps, mapDispatchtoProps)(Category);

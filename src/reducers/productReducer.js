@@ -8,6 +8,8 @@ const initState = {
         info: [],
         img: ""
     },
+    hotProduct: [],
+    typeProduct: [],
     num: 10,
     value: undefined,
     filter: undefined,
@@ -22,6 +24,12 @@ export default (state = initState, action) => {
             return state;
         case types.PRODUCT_DETAILS:
             state = {...state, productDetail: action.productDetail}
+            return state
+        case types.HOT_PRODUCT:
+            state = {...state, hotProduct: action.hotProduct}
+            return state;
+        case types.TYPE_PRODUCT:
+            state = {...state, typeProduct: action.typeProduct}
             return state
         case types.SHOW_PRODUCT:
             state = {...state, num: action.num}

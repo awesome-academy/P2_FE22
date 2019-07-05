@@ -13,7 +13,9 @@ class ProductContent extends Component{
         }
     }
     componentDidMount(){
-        this.props.getProductRequest();
+        if(this.props.product.length === 0){
+            this.props.getProductRequest();
+        }
     }
     componentWillReceiveProps(){
         if(this.props.isGrid){
