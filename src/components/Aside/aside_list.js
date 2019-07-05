@@ -1,42 +1,37 @@
 import React, {Component} from 'react';
 import Aside from './aside';
 import AsideImage from './aside_img';
+import AsideType from './asideType';
 import {productPortfolio, priceList, colorList, galery} from './../variable/header';
-import getProductAPI from '../../utils/apiCaller';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction';
 class AsideList extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            arr: []
-        }
-    }
     componentDidMount(){
-        getProductAPI('product?isHot=true','GET', null).then(res => {
-            this.setState({
-                arr: res.data
-            })
-        })
+        this.props.getHotProductRequest();
     }
     render(){
+        const {hotProduct} =  this.props;
         return(
             <div className="aside-list">
-                <Aside aside={productPortfolio} event={this.props.filterProduct}/>
+                <AsideType aside={productPortfolio} event={this.props.filterProduct}/>
                 {!this.props.isSelectProduct && <Aside aside={priceList}  event={this.props.filterProduct}/>}
                 {!this.props.isSelectProduct && <Aside aside={colorList}  event={this.props.filterProduct}/>}
-                {!this.props.isSelectProduct && <AsideImage aside={this.state.arr} style={galery}/>}
+                {!this.props.isSelectProduct && <AsideImage aside={hotProduct} style={galery}/>}
             </div>
         );
     }
 }
 const mapStatetoProps = (state) => {
     return {
+        hotProduct: state.productReducer.hotProduct,
         isSelectProduct: state.productReducer.isSelectProduct
     }
 }
 const mapDispatchtoProps = (dispatch, props) => {
     return {
+        getHotProductRequest: () => {
+            dispatch(action.getHotProductRequest())
+        },
         filterProduct: (filter) => {
             dispatch(action.filterProduct(filter))
         }  

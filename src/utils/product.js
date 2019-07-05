@@ -55,3 +55,24 @@ export const convertArraytoQuery = (array) => {
     if(array.length == 0) return 'id';
     return array.map(item => `id=${item}&`).join("");
 }
+export const typeProduct = (data) => {
+    let type = [];
+    for(let item of data){
+        type.push(item.type)
+    }
+    type = [...new Set([...type])]
+    return type;
+}
+export const chart = (data) => {
+    let newA = [], item;
+    for(item of data){
+        newA.push({day: item.day, order: item.order.length, price: item.price})
+    }
+    let rs = Object.values(newA.reduce((x, {day, order, price}) =>{
+        x[day] = x[day] || {day, order, price : 0}
+        x[day].order += order;
+        x[day].price += price;
+        return x;
+    },{}))
+    return rs;
+}

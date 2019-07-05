@@ -1,5 +1,6 @@
 export const FETCH_API = 'FETCH_API';
 export const PRODUCT_DETAILS = 'PRODUCT_DETAILS';
+export const HOT_PRODUCT = 'HOT_PRODUCT';
 export const SHOW_PRODUCT = 'SHOW_PRODUCT';
 export const ORDER_PRODUCT = 'ORDER_PRODUCT';
 export const FILTER_PRODUCT = 'FILTER_PRODUCT';
@@ -13,3 +14,7 @@ export const IS_LOGIN = 'IS_LOGIN';
 export const IS_LOGOUT = 'IS_LOGOUT';
 export const IS_PAYMENT = 'IS_PAYMENT';
 export const IS_ADMIN = 'IS_ADMIN';
+//
+export const TYPE_PRODUCT = 'TYPE_PRODUCT';
+export const FETCH_USER = 'FETCH_USER';
+export const FETCH_ORDER = 'FETCH_ORDER';

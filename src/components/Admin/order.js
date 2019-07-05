@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction';
+import * as adminAction from '../../actions/adminAction';
 import callAPI from '../../utils/apiCaller';
 import ProductItem from './productItem';
 import {formatPrice} from '../../utils/formatPrice';
 import Show from './show';
 import Tablecell from './tablecell';
-import {sortOrder, filterArray} from '../../utils/filter';
+import {sortOrder} from '../../utils/filter';
 import '../../styles/table.css'
 class Order extends Component {
     constructor(props){
         super(props);
         this.state = {
-            arr: [],
             asc: true
         }
     }
@@ -33,17 +33,14 @@ class Order extends Component {
             )
     }
     componentDidMount(){
-        callAPI(`${this.props.endpoint}`, 'GET', null)
-            .then(res => {
-                this.setState({
-                    arr: res.data
-                })
-            })
+        if(this.props.orders.length === 0){
+            this.props.getOrderRequest();
+        }
     }
     render(){
-        const {num, value, filter} = this.props;
-        const {arr, asc} = this.state;
-        const sorted = sortOrder(arr, value, asc)
+        const {num, value, orders} = this.props;
+        const {asc} = this.state;
+        const sorted = sortOrder(orders, value, asc)
         return(
             <div>
                 <Show event={this.props.showProduct}/>
@@ -123,6 +120,7 @@ class Order extends Component {
 }
 const mapStatetoProps = (state) => {
     return {
+        orders: state.adminReducer.orders,
         num : state.productReducer.num,
         value: state.productReducer.value,
         filter: state.productReducer.filter
@@ -130,6 +128,9 @@ const mapStatetoProps = (state) => {
 }
 const mapDispatchtoProps = (dispatch, props) => {
     return {
+        getOrderRequest: () => {
+            dispatch(adminAction.getOrderRequest())
+        },
         showProduct: (num) => {
             dispatch(action.showProduct(num))
         },

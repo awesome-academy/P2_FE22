@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as action from '../../actions/indexAction';
+import * as adminAction from '../../actions/adminAction';
 import callAPI from '../../utils/apiCaller';
 import ProductItem from './productItem';
 import {formatPrice} from '../../utils/formatPrice';
 import Show from './show';
 import Tablecell from './tablecell';
-import {sortUser, filterArray} from '../../utils/filter';
+import {sortUser} from '../../utils/filter';
 import '../../styles/table.css'
 class User extends Component {
     constructor(props){
         super(props);
         this.state = {
-            arr: [],
             asc: true
         }
     }
@@ -33,17 +33,14 @@ class User extends Component {
             )
     }
     componentDidMount(){
-        callAPI(`${this.props.endpoint}`, 'GET', null)
-            .then(res => {
-                this.setState({
-                    arr: res.data
-                })
-            })
+        if(this.props.users.length === 0){
+            this.props.getUserRequest();
+        }
     }
     render(){
-        const {num, value, filter} = this.props;
-        const {arr, asc} = this.state;
-        const sorted = sortUser(arr, value, asc)
+        const {num, value, users} = this.props;
+        const {asc} = this.state;
+        const sorted = sortUser(users, value, asc)
         return(
             <div>
                 <Show event={this.props.showProduct}/>
@@ -130,6 +127,7 @@ class User extends Component {
 }
 const mapStatetoProps = (state) => {
     return {
+        users: state.adminReducer.users,
         num : state.productReducer.num,
         value: state.productReducer.value,
         filter: state.productReducer.filter
@@ -137,6 +135,9 @@ const mapStatetoProps = (state) => {
 }
 const mapDispatchtoProps = (dispatch, props) => {
     return {
+        getUserRequest: () => {
+            dispatch(adminAction.getUserRequest())
+        },
         showProduct: (num) => {
             dispatch(action.showProduct(num))
         },

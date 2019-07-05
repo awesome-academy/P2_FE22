@@ -2,20 +2,7 @@ export const productPortfolio = {
     iconTitle: 'fa fa-bars',
     title: 'DANH MỤC SẢN PHẨM',
     icon: 'fa fa-th-large',
-    type: 'type',
-    itemAside: [
-        {key: "máy khoan, cắt CNC", value: "máy khoan, cắt CNC"},
-        {key: "máy in phun cỡ lớn", value: "máy in phun cỡ lớn"},
-        {key: "máy quét canon 3D", value: "máy quét canon 3D"},
-        {key: "máy hàn điện Alunima", value: "máy hàn điện Alunima"},
-        {key: "máy khoan Decameta", value: "máy khoan Decameta"},
-        {key: "máy phay đa năng CNC", value: "máy phay đa năng CNC"},
-        {key: "máy mài, tện, DC 12V", value: "máy mài, tện, DC 12V"},
-        {key: "máy khoan, cắt CNC", value: "máy khoan, cắt CNC"},
-        {key: "máy thông minh N3", value: "máy thông minh N3"},
-        {key: "motor R34C đa dụng", value: "motor R34C đa dụng"},
-        {key: "máy in laser màu 3D", value: "máy in laser màu 3D"},
-    ]
+    type: 'type'
 }
 export const priceList = {
     iconTitle: 'fa fa-usd',
